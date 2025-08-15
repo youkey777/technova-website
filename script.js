@@ -11,6 +11,16 @@ const slideDots = document.querySelectorAll('.slide-dot');
 let currentSlide = 0;
 let slideInterval;
 
+// サービスカルーセル関連
+let currentServiceSlide = 0;
+const serviceSlides = document.querySelectorAll('.service-slide');
+const carouselDots = document.querySelectorAll('.carousel-dot');
+
+// ケーススタディカルーセル関連
+let currentCaseSlide = 0;
+const caseSlides = document.querySelectorAll('.case-slide');
+const caseIndicators = document.querySelectorAll('.case-indicator');
+
 // テーマ切り替え機能
 let isDarkMode = false;
 
@@ -366,3 +376,147 @@ function optimizedScroll() {
 // 最適化されたスクロールイベントに置き換え
 window.removeEventListener('scroll', handleScroll);
 window.addEventListener('scroll', optimizedScroll, { passive: true });
+
+// サービスカルーセル機能
+function changeServiceSlide(direction) {
+    if (serviceSlides.length === 0) return;
+    
+    // 現在のスライドを非アクティブに
+    serviceSlides[currentServiceSlide].classList.remove('active');
+    carouselDots[currentServiceSlide].classList.remove('active');
+    
+    // 新しいスライドインデックスを計算
+    currentServiceSlide += direction;
+    
+    if (currentServiceSlide >= serviceSlides.length) {
+        currentServiceSlide = 0;
+    } else if (currentServiceSlide < 0) {
+        currentServiceSlide = serviceSlides.length - 1;
+    }
+    
+    // 新しいスライドをアクティブに
+    serviceSlides[currentServiceSlide].classList.add('active');
+    carouselDots[currentServiceSlide].classList.add('active');
+    
+    // スライドコンテナを移動
+    const slidesContainer = document.querySelector('.service-slides');
+    if (slidesContainer) {
+        slidesContainer.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+    }
+}
+
+function goToServiceSlide(index) {
+    if (serviceSlides.length === 0 || index >= serviceSlides.length) return;
+    
+    // 現在のスライドを非アクティブに
+    serviceSlides[currentServiceSlide].classList.remove('active');
+    carouselDots[currentServiceSlide].classList.remove('active');
+    
+    // 指定されたスライドをアクティブに
+    currentServiceSlide = index;
+    serviceSlides[currentServiceSlide].classList.add('active');
+    carouselDots[currentServiceSlide].classList.add('active');
+    
+    // スライドコンテナを移動
+    const slidesContainer = document.querySelector('.service-slides');
+    if (slidesContainer) {
+        slidesContainer.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+    }
+}
+
+// サービスカルーセルの自動再生
+function initServiceCarousel() {
+    // 自動スライド切り替え（5秒間隔）
+    setInterval(() => {
+        changeServiceSlide(1);
+    }, 5000);
+    
+    // カルーセルホバー時の一時停止（オプション）
+    const carousel = document.querySelector('.services-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => {
+            // 自動再生を一時停止する処理はここに追加可能
+        });
+    }
+}
+
+// ケーススタディカルーセル機能
+function changeCaseSlide(direction) {
+    if (caseSlides.length === 0) return;
+    
+    // 現在のスライドを非アクティブに
+    caseSlides[currentCaseSlide].classList.remove('active');
+    caseIndicators[currentCaseSlide].classList.remove('active');
+    
+    // 新しいスライドインデックスを計算
+    currentCaseSlide += direction;
+    
+    if (currentCaseSlide >= caseSlides.length) {
+        currentCaseSlide = 0;
+    } else if (currentCaseSlide < 0) {
+        currentCaseSlide = caseSlides.length - 1;
+    }
+    
+    // 新しいスライドをアクティブに
+    caseSlides[currentCaseSlide].classList.add('active');
+    caseIndicators[currentCaseSlide].classList.add('active');
+    
+    // スライドコンテナを移動
+    const caseSlidesContainer = document.querySelector('.case-slides');
+    if (caseSlidesContainer) {
+        caseSlidesContainer.style.transform = `translateX(-${currentCaseSlide * 100}%)`;
+    }
+}
+
+function goToCaseSlide(index) {
+    if (caseSlides.length === 0 || index >= caseSlides.length) return;
+    
+    // 現在のスライドを非アクティブに
+    caseSlides[currentCaseSlide].classList.remove('active');
+    caseIndicators[currentCaseSlide].classList.remove('active');
+    
+    // 指定されたスライドをアクティブに
+    currentCaseSlide = index;
+    caseSlides[currentCaseSlide].classList.add('active');
+    caseIndicators[currentCaseSlide].classList.add('active');
+    
+    // スライドコンテナを移動
+    const caseSlidesContainer = document.querySelector('.case-slides');
+    if (caseSlidesContainer) {
+        caseSlidesContainer.style.transform = `translateX(-${currentCaseSlide * 100}%)`;
+    }
+}
+
+// ケーススタディカルーセルの自動再生
+function initCaseCarousel() {
+    // 自動スライド切り替え（7秒間隔）
+    setInterval(() => {
+        changeCaseSlide(1);
+    }, 7000);
+}
+
+// 初期化にカルーセルを追加
+document.addEventListener('DOMContentLoaded', function() {
+    // 既存の初期化
+    checkFontLoading();
+    forceApplyFonts();
+    loadTheme();
+    initEventListeners();
+    initServiceCards();
+    animateCounters();
+    initFadeInAnimation();
+    initSlideshow();
+    initSlideshowPause();
+    initSmoothScrolling();
+    
+    // カルーセル初期化を追加
+    initServiceCarousel();
+    initCaseCarousel();
+    
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            forceApplyFonts();
+        }, 100);
+        document.body.classList.add('loaded');
+    });
+});

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2024-1215-clecom-style">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -47,6 +47,10 @@
     <main>
         <!-- ヒーローセクション -->
         <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="bg-geometric-pattern"></div>
+                <div class="bg-gradient-overlay"></div>
+            </div>
             <div class="hero-slideshow">
                 <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
                 <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80')"></div>
@@ -54,13 +58,14 @@
                 <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
             </div>
             <div class="hero-content">
-                <h2 class="hero-title">
-                    <span class="gradient-text">革新的な技術</span>で<br>
-                    未来を創造する
-                </h2>
+                <h1 class="hero-title">
+                    <span class="hero-impact">どんな課題だって、</span><br>
+                    <span class="hero-tech">このテクノロジーで</span><br>
+                    <span class="hero-action">乗り越えていく。</span>
+                </h1>
                 <p class="hero-description">
-                    AIとクラウドテクノロジーを駆使し、企業のデジタル変革を加速させます。<br>
-                    最先端の技術力で、お客様のビジネスの成長をサポートします。
+                    AIとクラウドテクノロジーの力で、不可能を可能に変える。<br>
+                    <span class="hero-emphasis">革新的なソリューションが、あなたのビジネスを次のステージへと導きます。</span>
                 </p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">サービスを見る</button>
@@ -83,42 +88,182 @@
         <section id="services" class="services">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI開発">
-                        </div>
-                        <div class="service-content">
-                            <h3>AI開発</h3>
-                            <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
+                <div class="services-carousel">
+                    <div class="carousel-container">
+                        <div class="service-slides">
+                            <div class="service-slide active">
+                                <div class="service-card">
+                                    <div class="service-image">
+                                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI開発">
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>AI開発</h3>
+                                        <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-card">
+                                    <div class="service-image">
+                                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="クラウドソリューション">
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>クラウドソリューション</h3>
+                                        <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-card">
+                                    <div class="service-image">
+                                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="モバイルアプリ開発">
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>モバイルアプリ開発</h3>
+                                        <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="service-slide">
+                                <div class="service-card">
+                                    <div class="service-image">
+                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="セキュリティ">
+                                    </div>
+                                    <div class="service-content">
+                                        <h3>サイバーセキュリティ</h3>
+                                        <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="クラウドソリューション">
+                    <div class="carousel-navigation">
+                        <button class="carousel-btn prev-btn" onclick="changeServiceSlide(-1)">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="carousel-dots">
+                            <span class="carousel-dot active" onclick="goToServiceSlide(0)"></span>
+                            <span class="carousel-dot" onclick="goToServiceSlide(1)"></span>
+                            <span class="carousel-dot" onclick="goToServiceSlide(2)"></span>
+                            <span class="carousel-dot" onclick="goToServiceSlide(3)"></span>
                         </div>
-                        <div class="service-content">
-                            <h3>クラウドソリューション</h3>
-                            <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
+                        <button class="carousel-btn next-btn" onclick="changeServiceSlide(1)">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ケーススタディセクション -->
+        <section id="case-studies" class="case-studies">
+            <div class="container">
+                <h2 class="section-title">Case Studies</h2>
+                <p class="section-subtitle">私たちが手がけた革新的なプロジェクトをご紹介します</p>
+                
+                <div class="case-studies-carousel">
+                    <div class="case-container">
+                        <div class="case-slides">
+                            <div class="case-slide active">
+                                <div class="case-card">
+                                    <div class="case-visual">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI予測システム">
+                                        <div class="case-overlay">
+                                            <span class="case-category">AI・機械学習</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-content">
+                                        <h3>需要予測AIシステム</h3>
+                                        <p class="case-client">大手小売チェーン A社</p>
+                                        <p class="case-description">店舗の売上データと外部要因を分析し、商品需要を高精度で予測するAIシステムを開発。在庫最適化により年間20%のコスト削減を実現。</p>
+                                        <div class="case-results">
+                                            <div class="result-item">
+                                                <span class="result-value">20%</span>
+                                                <span class="result-label">コスト削減</span>
+                                            </div>
+                                            <div class="result-item">
+                                                <span class="result-value">95%</span>
+                                                <span class="result-label">予測精度</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="case-slide">
+                                <div class="case-card">
+                                    <div class="case-visual">
+                                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="クラウド移行">
+                                        <div class="case-overlay">
+                                            <span class="case-category">クラウド</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-content">
+                                        <h3>大規模クラウド移行プロジェクト</h3>
+                                        <p class="case-client">金融機関 B社</p>
+                                        <p class="case-description">レガシーシステムを段階的にAWSクラウドへ移行。高可用性とセキュリティを確保しながら、運用コストを大幅に削減。</p>
+                                        <div class="case-results">
+                                            <div class="result-item">
+                                                <span class="result-value">40%</span>
+                                                <span class="result-label">運用コスト削減</span>
+                                            </div>
+                                            <div class="result-item">
+                                                <span class="result-value">99.9%</span>
+                                                <span class="result-label">可用性</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="case-slide">
+                                <div class="case-card">
+                                    <div class="case-visual">
+                                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="モバイルアプリ">
+                                        <div class="case-overlay">
+                                            <span class="case-category">モバイル</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-content">
+                                        <h3>次世代配送管理アプリ</h3>
+                                        <p class="case-client">物流企業 C社</p>
+                                        <p class="case-description">リアルタイム配送追跡とAI最適化ルーティングを搭載したモバイルアプリ。配送効率の大幅な向上を実現。</p>
+                                        <div class="case-results">
+                                            <div class="result-item">
+                                                <span class="result-value">30%</span>
+                                                <span class="result-label">配送時間短縮</span>
+                                            </div>
+                                            <div class="result-item">
+                                                <span class="result-value">50万+</span>
+                                                <span class="result-label">アクティブユーザー</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="モバイルアプリ開発">
+                    
+                    <div class="case-navigation">
+                        <button class="case-nav-btn prev-btn" onclick="changeCaseSlide(-1)">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div class="case-indicators">
+                            <span class="case-indicator active" onclick="goToCaseSlide(0)"></span>
+                            <span class="case-indicator" onclick="goToCaseSlide(1)"></span>
+                            <span class="case-indicator" onclick="goToCaseSlide(2)"></span>
                         </div>
-                        <div class="service-content">
-                            <h3>モバイルアプリ開発</h3>
-                            <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
-                        </div>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="セキュリティ">
-                        </div>
-                        <div class="service-content">
-                            <h3>サイバーセキュリティ</h3>
-                            <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
-                        </div>
+                        <button class="case-nav-btn next-btn" onclick="changeCaseSlide(1)">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -126,6 +271,11 @@
 
         <!-- 会社概要セクション -->
         <section id="about" class="about">
+            <div class="about-bg-pattern">
+                <div class="pattern-layer pattern-1"></div>
+                <div class="pattern-layer pattern-2"></div>
+                <div class="pattern-overlay"></div>
+            </div>
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
@@ -198,46 +348,85 @@
         <section id="team" class="team">
             <div class="container">
                 <h2 class="section-title">Our Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="田中 太郎">
+                <p class="section-subtitle">情熱と専門性を兼ね備えたプロフェッショナル集団</p>
+                
+                <div class="team-showcase">
+                    <!-- Leadership Section -->
+                    <div class="leadership-section">
+                        <div class="leader-card featured">
+                            <div class="leader-image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="田中 太郎">
+                                <div class="leader-overlay">
+                                    <div class="leader-quote">
+                                        "テクノロジーで世界をより良い場所に"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leader-info">
+                                <h3>田中 太郎</h3>
+                                <p class="leader-role">CEO / Founder</p>
+                                <p class="leader-bio">東京大学工学部卒業後、Google、Microsoftで15年の経験を積む。2020年TechNova設立。</p>
+                            </div>
                         </div>
-                        <div class="member-info">
-                            <h3>田中 太郎</h3>
-                            <p class="member-role">CEO / Founder</p>
-                            <p class="member-description">東京大学工学部卒業後、Google、Microsoftでの15年間のソフトウェア開発経験を経て、2020年にTechNovaを設立。技術と経営の両面からイノベーションを推進する。</p>
-                            <div class="member-social">
-                                <a href="#" class="social-link">LinkedIn</a>
-                                <a href="#" class="social-link">Twitter</a>
+                        
+                        <div class="leader-card">
+                            <div class="leader-image">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b300?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="佐藤 花子">
+                                <div class="leader-overlay">
+                                    <div class="leader-quote">
+                                        "AIで未来を切り拓く"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="leader-info">
+                                <h3>佐藤 花子</h3>
+                                <p class="leader-role">CTO</p>
+                                <p class="leader-bio">スタンフォード大学でAI博士号取得。シリコンバレーでの研究開発経験を活かす。</p>
                             </div>
                         </div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="佐藤 花子">
+                    
+                    <!-- Team Gallery -->
+                    <div class="team-gallery">
+                        <div class="gallery-header">
+                            <h3>私たちのチーム</h3>
+                            <p>多様な背景を持つ専門家が、共通の目標に向かって協力しています</p>
                         </div>
-                        <div class="member-info">
-                            <h3>佐藤 花子</h3>
-                            <p class="member-role">CTO</p>
-                            <p class="member-description">スタンフォード大学でAI・機械学習を専攻し、博士号を取得。シリコンバレーでの研究開発経験を活かし、最先端のAI技術をビジネスに実装するスペシャリスト。</p>
-                            <div class="member-social">
-                                <a href="#" class="social-link">LinkedIn</a>
-                                <a href="#" class="social-link">GitHub</a>
+                        
+                        <div class="photo-grid">
+                            <div class="photo-item large">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="チームミーティング">
+                                <div class="photo-caption">
+                                    <span>イノベーションセッション</span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-photo">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="山田 次郎">
-                        </div>
-                        <div class="member-info">
-                            <h3>山田 次郎</h3>
-                            <p class="member-role">Lead Developer</p>
-                            <p class="member-description">AWS認定ソリューションアーキテクト。大規模なクラウドインフラの設計・構築から、DevOps文化の浸透まで、技術チーム全体のリーダーシップを発揮する。</p>
-                            <div class="member-social">
-                                <a href="#" class="social-link">LinkedIn</a>
-                                <a href="#" class="social-link">Qiita</a>
+                            
+                            <div class="photo-item">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="開発チーム">
+                                <div class="photo-caption">
+                                    <span>開発チーム</span>
+                                </div>
+                            </div>
+                            
+                            <div class="photo-item">
+                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="プレゼンテーション">
+                                <div class="photo-caption">
+                                    <span>クライアントプレゼン</span>
+                                </div>
+                            </div>
+                            
+                            <div class="photo-item medium">
+                                <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="オフィス環境">
+                                <div class="photo-caption">
+                                    <span>クリエイティブな職場</span>
+                                </div>
+                            </div>
+                            
+                            <div class="photo-item">
+                                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="チームランチ">
+                                <div class="photo-caption">
+                                    <span>チームランチ</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,35 +566,77 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>TechNova</h3>
-                    <p>革新的な技術で未来を創造する</p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <div class="logo-cube"></div>
+                            <div class="logo-cube"></div>
+                            <div class="logo-cube"></div>
+                            <div class="logo-cube"></div>
+                        </div>
+                        <span class="logo-text">TechNova</span>
+                    </div>
+                    <p class="footer-tagline">革新的なテクノロジーで、未来を創造する</p>
                 </div>
-                <div class="footer-section">
-                    <h4>サービス</h4>
-                    <ul>
-                        <li><a href="#services">AI開発</a></li>
-                        <li><a href="#services">クラウドソリューション</a></li>
-                        <li><a href="#services">モバイルアプリ開発</a></li>
-                        <li><a href="#services">セキュリティ</a></li>
-                    </ul>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>ソリューション</h4>
+                        <ul>
+                            <li><a href="#services">AI開発</a></li>
+                            <li><a href="#services">クラウド移行</a></li>
+                            <li><a href="#services">モバイルアプリ</a></li>
+                            <li><a href="#case-studies">実績</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>企業情報</h4>
+                        <ul>
+                            <li><a href="#about">会社概要</a></li>
+                            <li><a href="#team">チーム</a></li>
+                            <li><a href="#contact">採用情報</a></li>
+                            <li><a href="#contact">ニュース</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>サポート</h4>
+                        <ul>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="#contact">技術サポート</a></li>
+                            <li><a href="#contact">パートナー</a></li>
+                            <li><a href="#contact">プライバシー</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>会社情報</h4>
-                    <ul>
-                        <li><a href="#about">会社概要</a></li>
-                        <li><a href="#team">チーム</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                    </ul>
+                
+                <div class="footer-cta">
+                    <h4>プロジェクトを始めませんか？</h4>
+                    <p>革新的なソリューションで、あなたのビジネスを次のレベルへ</p>
+                    <a href="#contact" class="footer-btn">
+                        相談する
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 TechNova. All rights reserved.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 TechNova. All rights reserved.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">LinkedIn</a>
+                        <a href="#" class="social-icon">Twitter</a>
+                        <a href="#" class="social-icon">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2024-1215-clecom-style"></script>
 </body>
 </html>
