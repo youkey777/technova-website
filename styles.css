@@ -301,13 +301,14 @@ body {
 }
 
 .hero-title {
-  font-family: 'Roboto', 'Noto Sans JP', sans-serif !important;
-  font-size: clamp(3rem, 7vw, 5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
-  letter-spacing: -0.03em;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif !important;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.08em;
+  text-transform: none;
 }
 
 .gradient-text {
@@ -1250,6 +1251,11 @@ section:nth-child(even) {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+  /* 横スクロール防止 */
+  body {
+    overflow-x: hidden;
+  }
+  
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -1285,24 +1291,28 @@ section:nth-child(even) {
   }
 
   .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 8vw, 2.8rem) !important;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
   }
 
   .hero-description {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
   }
 
   .btn {
-    width: 200px;
-    padding: 0.8rem 1.5rem;
+    width: 250px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
 
   .slideshow-controls {
@@ -1314,9 +1324,45 @@ section:nth-child(even) {
     gap: 2rem;
   }
 
-  .contact-content {
-    grid-template-columns: 1fr;
+  /* Contact セクション修正 */
+  .contact-wrapper {
+    grid-template-columns: 1fr !important;
     gap: 2rem;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 2rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem;
+  }
+
+  .values-timeline {
+    margin-left: 0;
+  }
+
+  .values-timeline::before {
+    left: 1rem;
+  }
+
+  .value-card {
+    margin-left: 2rem;
+    padding: 1.5rem;
+  }
+
+  .value-icon::before {
+    left: -2.5rem;
   }
 
   .stats {
@@ -1347,27 +1393,41 @@ section:nth-child(even) {
 
   .container {
     padding: 0 15px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    font-size: clamp(1.5rem, 9vw, 2.2rem) !important;
+    letter-spacing: 0.03em;
   }
 
   .hero-description {
     font-size: 1rem;
+    line-height: 1.7;
   }
 
   .service-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
 
   .team-member {
     padding: 1.5rem;
   }
 
-  .contact-form {
+  .contact-info-card,
+  .contact-form-card {
     padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
   }
 }
