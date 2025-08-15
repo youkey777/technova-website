@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - 次世代IT企業</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-cube"></div>
+                        <div class="logo-cube"></div>
+                        <div class="logo-cube"></div>
+                        <div class="logo-cube"></div>
+                    </div>
+                    <span class="logo-text">TechNova</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">ホーム</a></li>
+                <li><a href="#services" class="nav-link">サービス</a></li>
+                <li><a href="#about" class="nav-link">会社概要</a></li>
+                <li><a href="#team" class="nav-link">チーム</a></li>
+                <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- ヒーローセクション -->
+        <section id="home" class="hero">
+            <div class="hero-slideshow">
+                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80')"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"></div>
+            </div>
+            <div class="hero-content">
+                <h2 class="hero-title">
+                    <span class="gradient-text">革新的な技術</span>で<br>
+                    未来を創造する
+                </h2>
+                <p class="hero-description">
+                    AIとクラウドテクノロジーを駆使し、企業のデジタル変革を加速させます。<br>
+                    最先端の技術力で、お客様のビジネスの成長をサポートします。
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">サービスを見る</button>
+                    <button class="btn btn-secondary">お問い合わせ</button>
+                </div>
+            </div>
+            <div class="slideshow-controls">
+                <span class="slide-dot active" data-slide="0"></span>
+                <span class="slide-dot" data-slide="1"></span>
+                <span class="slide-dot" data-slide="2"></span>
+                <span class="slide-dot" data-slide="3"></span>
+            </div>
+            <div class="scroll-indicator">
+                <span class="scroll-text">Scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- サービスセクション -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI開発">
+                        </div>
+                        <div class="service-content">
+                            <h3>AI開発</h3>
+                            <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="クラウドソリューション">
+                        </div>
+                        <div class="service-content">
+                            <h3>クラウドソリューション</h3>
+                            <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="モバイルアプリ開発">
+                        </div>
+                        <div class="service-content">
+                            <h3>モバイルアプリ開発</h3>
+                            <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="セキュリティ">
+                        </div>
+                        <div class="service-content">
+                            <h3>サイバーセキュリティ</h3>
+                            <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 会社概要セクション -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About TechNova</h2>
+                        
+                        <div class="mission-statement">
+                            <h3 class="mission-title">私たちの使命</h3>
+                            <p class="mission-text">
+                                テクノロジーの力で、社会の課題を解決し、より良い未来を創造すること。それがTechNovaの存在意義です。
+                            </p>
+                        </div>
+
+                        <div class="vision-section">
+                            <h3 class="vision-title">ビジョン</h3>
+                            <p class="about-description">
+                                2020年に設立されたTechNovaは、「Technology for Everyone」を理念に掲げ、すべての人がテクノロジーの恩恵を受けられる社会の実現を目指しています。
+                            </p>
+                            <p class="about-description">
+                                AI、クラウド、モバイル技術を通じて、企業のデジタル変革を支援するだけでなく、社会全体のイノベーションを促進し、持続可能な未来の構築に貢献します。
+                            </p>
+                        </div>
+
+                        <div class="values-section">
+                            <h3 class="values-title">私たちの価値観</h3>
+                            <div class="values-timeline">
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L13.09 8.26L17 5L14.74 9.74L22 12L14.74 14.26L17 19L13.09 15.74L12 22L10.91 15.74L7 19L9.26 14.26L2 12L9.26 9.74L7 5L10.91 8.26L12 2Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="value-content">
+                                        <h4>Innovation</h4>
+                                        <p>常に最先端の技術を追求し、革新的なソリューションを創造します。私たちは現状に満足することなく、未来を見据えた技術開発を行います。</p>
+                                    </div>
+                                </div>
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H9V3H13.5L18.5 8H21ZM7 12V21C7 21.6 7.4 22 8 22H16C16.6 22 17 21.6 17 21V12L12 7L7 12Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="value-content">
+                                        <h4>Collaboration</h4>
+                                        <p>お客様と共に課題に向き合い、持続的な成長を実現します。パートナーシップを重視し、共に成功を目指します。</p>
+                                    </div>
+                                </div>
+                                <div class="value-card">
+                                    <div class="value-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7.5 14 12.5 16 16.5 18C20.5 20 22 18.5 22 18.5C22 18.5 21 20 17 18Z" fill="currentColor"/>
+                                        </svg>
+                                    </div>
+                                    <div class="value-content">
+                                        <h4>Sustainability</h4>
+                                        <p>環境と社会に配慮した技術開発で、未来世代に責任を果たします。持続可能な社会の実現に向けて行動します。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="tech-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- チームセクション -->
+        <section id="team" class="team">
+            <div class="container">
+                <h2 class="section-title">Our Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="田中 太郎">
+                        </div>
+                        <div class="member-info">
+                            <h3>田中 太郎</h3>
+                            <p class="member-role">CEO / Founder</p>
+                            <p class="member-description">東京大学工学部卒業後、Google、Microsoftでの15年間のソフトウェア開発経験を経て、2020年にTechNovaを設立。技術と経営の両面からイノベーションを推進する。</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b300?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80" alt="佐藤 花子">
+                        </div>
+                        <div class="member-info">
+                            <h3>佐藤 花子</h3>
+                            <p class="member-role">CTO</p>
+                            <p class="member-description">スタンフォード大学でAI・機械学習を専攻し、博士号を取得。シリコンバレーでの研究開発経験を活かし、最先端のAI技術をビジネスに実装するスペシャリスト。</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="山田 次郎">
+                        </div>
+                        <div class="member-info">
+                            <h3>山田 次郎</h3>
+                            <p class="member-role">Lead Developer</p>
+                            <p class="member-description">AWS認定ソリューションアーキテクト。大規模なクラウドインフラの設計・構築から、DevOps文化の浸透まで、技術チーム全体のリーダーシップを発揮する。</p>
+                            <div class="member-social">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">Qiita</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info-card">
+                        <div class="contact-header">
+                            <h3>プロジェクトを始めましょう</h3>
+                            <p>革新的なソリューションで、あなたのビジネスを次のステージへ。</p>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5ZM5 7L12 13L19 7V5L12 11L5 5V7Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h4>メール</h4>
+                                    <p>info@technova.com</p>
+                                    <span class="response-time">24時間以内に返信</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.09 8.32 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h4>電話</h4>
+                                    <p>03-1234-5678</p>
+                                    <span class="response-time">平日 9:00-18:00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                                    </svg>
+                                </div>
+                                <div class="method-content">
+                                    <h4>オフィス</h4>
+                                    <p>東京都渋谷区恵比寿1-1-1</p>
+                                    <span class="response-time">事前予約制</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-connect">
+                            <h4>ソーシャルメディア</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-btn">LinkedIn</a>
+                                <a href="#" class="social-btn">Twitter</a>
+                                <a href="#" class="social-btn">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-card">
+                        <form class="modern-contact-form">
+                            <div class="form-header">
+                                <h3>プロジェクトについて教えてください</h3>
+                                <p>詳細をお聞かせいただければ、最適なソリューションをご提案します。</p>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="floating-input">
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <label for="firstName">お名前</label>
+                                </div>
+                                <div class="floating-input">
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="email">メールアドレス</label>
+                                </div>
+                            </div>
+                            
+                            <div class="floating-input">
+                                <input type="text" id="company" name="company">
+                                <label for="company">会社名（任意）</label>
+                            </div>
+                            
+                            <div class="service-selection">
+                                <label class="selection-label">興味のあるサービス</label>
+                                <div class="service-options">
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="ai">
+                                        <span class="checkmark"></span>
+                                        AI開発
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="cloud">
+                                        <span class="checkmark"></span>
+                                        クラウドソリューション
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="mobile">
+                                        <span class="checkmark"></span>
+                                        モバイルアプリ開発
+                                    </label>
+                                    <label class="service-option">
+                                        <input type="checkbox" name="services" value="security">
+                                        <span class="checkmark"></span>
+                                        セキュリティ
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="floating-input">
+                                <textarea id="projectDetails" name="projectDetails" rows="4" required></textarea>
+                                <label for="projectDetails">プロジェクトの詳細</label>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">プロジェクトを開始</span>
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechNova</h3>
+                    <p>革新的な技術で未来を創造する</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="#services">AI開発</a></li>
+                        <li><a href="#services">クラウドソリューション</a></li>
+                        <li><a href="#services">モバイルアプリ開発</a></li>
+                        <li><a href="#services">セキュリティ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>会社情報</h4>
+                    <ul>
+                        <li><a href="#about">会社概要</a></li>
+                        <li><a href="#team">チーム</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechNova. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
