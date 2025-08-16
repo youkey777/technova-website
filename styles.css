@@ -1,21 +1,23 @@
 /* CSS カスタムプロパティ（クリーンなカラーテーマ） */
 :root {
-  /* ライトモードカラー - Clecom/Infcurion風 */
-  --primary-color: #22c55e;
-  --secondary-color: #16a34a;
-  --accent-color: #059669;
+  /* Clecom準拠カラー */
+  --primary-color: #4A90A4;
+  --secondary-color: #6B7C93;
+  --accent-color: #EC7A9B;
+  --accent-light: #F4A6CD;
   --background-color: #ffffff;
-  --surface-color: #f9fafb;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --text-light: #9ca3af;
-  --border-color: #e5e7eb;
+  --surface-color: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
   --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-medium: rgba(0, 0, 0, 0.1);
   
-  /* シンプルなグラデーション */
-  --gradient-primary: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  /* Clecomスタイルグラデーション */
+  --gradient-primary: linear-gradient(135deg, #4A90A4 0%, #6B7C93 100%);
+  --gradient-accent: linear-gradient(135deg, #EC7A9B 0%, #F4A6CD 100%);
+  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 /* ダークモード */
@@ -320,7 +322,7 @@ body {
 
 .hero-tech {
   display: inline-block !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #ff8e53 100%) !important;
+  background: var(--gradient-accent) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -335,7 +337,7 @@ body {
   left: 0 !important;
   width: 100% !important;
   height: 4px !important;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 50%, #ff8e53 100%) !important;
+  background: var(--gradient-accent) !important;
   border-radius: 2px !important;
   opacity: 0.8 !important;
 }
@@ -492,9 +494,9 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%) !important;
+  background: var(--gradient-accent) !important;
   color: white !important;
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.4) !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -516,8 +518,8 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.5);
-  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+  box-shadow: 0 12px 35px rgba(236, 122, 155, 0.5);
+  background: linear-gradient(135deg, #E66BA0 0%, #EC7A9B 100%);
 }
 
 .btn-secondary {
@@ -715,7 +717,7 @@ section:nth-child(even) {
 }
 
 .carousel-btn {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: var(--gradient-accent);
   border: none;
   width: 50px;
   height: 50px;
@@ -726,12 +728,12 @@ section:nth-child(even) {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 15px rgba(236, 122, 155, 0.3);
 }
 
 .carousel-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 6px 20px rgba(236, 122, 155, 0.4);
 }
 
 .carousel-btn svg {
@@ -748,13 +750,13 @@ section:nth-child(even) {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgba(255, 107, 107, 0.3);
+  background: rgba(236, 122, 155, 0.3);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .carousel-dot.active {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: var(--gradient-accent);
   transform: scale(1.2);
 }
 
@@ -831,7 +833,7 @@ section:nth-child(even) {
 }
 
 .case-category {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: var(--gradient-accent);
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
@@ -1805,7 +1807,7 @@ section:nth-child(even) {
 .submit-btn {
   width: 100%;
   padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: var(--gradient-accent);
   color: white;
   border: none;
   border-radius: 16px;
@@ -1820,7 +1822,7 @@ section:nth-child(even) {
   gap: 1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 30px rgba(236, 122, 155, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1842,8 +1844,8 @@ section:nth-child(even) {
 
 .submit-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5);
-  background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%);
+  box-shadow: 0 12px 40px rgba(236, 122, 155, 0.5);
+  background: linear-gradient(135deg, #E66BA0 0%, #EC7A9B 100%);
 }
 
 .btn-icon {
@@ -1859,7 +1861,7 @@ section:nth-child(even) {
 /* フッター */
 /* Modern Footer */
 .footer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+  background: linear-gradient(135deg, #334155 0%, #475569 100%) !important;
   color: white !important;
   position: relative !important;
   overflow: hidden !important;
@@ -1928,7 +1930,7 @@ section:nth-child(even) {
 }
 
 .footer-column ul li a:hover {
-  color: #ff6b6b;
+  color: var(--accent-color);
   transform: translateX(5px);
 }
 
@@ -1959,18 +1961,18 @@ section:nth-child(even) {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  background: var(--gradient-accent);
   color: white;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 4px 20px rgba(236, 122, 155, 0.3);
 }
 
 .footer-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 6px 25px rgba(236, 122, 155, 0.4);
 }
 
 .footer-btn svg {
@@ -2014,7 +2016,7 @@ section:nth-child(even) {
 }
 
 .social-icon:hover {
-  color: #ff6b6b;
+  color: var(--accent-color);
   transform: translateY(-2px);
 }
 
