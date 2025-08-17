@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
-    <link rel="stylesheet" href="styles.css?v=2024-1215-clecom-colors-fixed">
+    <link rel="stylesheet" href="styles.css?v=2024-1215-circular-carousel">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -88,72 +88,112 @@
         <section id="services" class="services">
             <div class="container">
                 <h2 class="section-title">Our Services</h2>
-                <div class="services-carousel">
-                    <div class="carousel-container">
-                        <div class="service-slides">
-                            <div class="service-slide active">
-                                <div class="service-card">
-                                    <div class="service-image">
-                                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="AI開発">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3>AI開発</h3>
-                                        <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
-                                    </div>
-                                </div>
+                <div class="circular-carousel">
+                    <!-- 円形軌道上の装飾アイコン -->
+                    <div class="orbit-icons">
+                        <div class="orbit-icon" style="--angle: 0deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-slide">
-                                <div class="service-card">
-                                    <div class="service-image">
-                                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="クラウドソリューション">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3>クラウドソリューション</h3>
-                                        <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 45deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-slide">
-                                <div class="service-card">
-                                    <div class="service-image">
-                                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="モバイルアプリ開発">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3>モバイルアプリ開発</h3>
-                                        <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 90deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-slide">
-                                <div class="service-card">
-                                    <div class="service-image">
-                                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="セキュリティ">
-                                    </div>
-                                    <div class="service-content">
-                                        <h3>サイバーセキュリティ</h3>
-                                        <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 135deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.7 6.3A1 1 0 0 0 13 5H5A2 2 0 0 0 3 7V19A2 2 0 0 0 5 21H17A2 2 0 0 0 19 19V11A1 1 0 0 0 18.7 10.3L14.7 6.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M14 6V10H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 180deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22S8 18 8 13A4 4 0 0 1 16 13C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="13" r="2" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 225deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 270deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="orbit-icon" style="--angle: 315deg;">
+                            <div class="icon-wrapper">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19C-2 12 4 2 9 2C13 2 13 6 11 8C16 10 21 6 19 15C17 13 17 10 16 10L9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-navigation">
-                        <button class="carousel-btn prev-btn" onclick="changeServiceSlide(-1)">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        <div class="carousel-dots">
-                            <span class="carousel-dot active" onclick="goToServiceSlide(0)"></span>
-                            <span class="carousel-dot" onclick="goToServiceSlide(1)"></span>
-                            <span class="carousel-dot" onclick="goToServiceSlide(2)"></span>
-                            <span class="carousel-dot" onclick="goToServiceSlide(3)"></span>
+
+                    <!-- 中央のメインコンテンツ -->
+                    <div class="service-center">
+                        <div class="service-navigation">
+                            <button class="nav-btn prev-btn" onclick="rotateServices(-1)">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="nav-btn next-btn" onclick="rotateServices(1)">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         </div>
-                        <button class="carousel-btn next-btn" onclick="changeServiceSlide(1)">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+
+                        <div class="service-display">
+                            <div class="service-number">01</div>
+                            <div class="service-content active" data-service="0">
+                                <h3>AI開発・機械学習</h3>
+                                <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
+                                <button class="view-more-btn">VIEW MORE</button>
+                            </div>
+                            <div class="service-content" data-service="1">
+                                <h3>クラウドソリューション</h3>
+                                <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
+                                <button class="view-more-btn">VIEW MORE</button>
+                            </div>
+                            <div class="service-content" data-service="2">
+                                <h3>モバイルアプリ開発</h3>
+                                <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
+                                <button class="view-more-btn">VIEW MORE</button>
+                            </div>
+                            <div class="service-content" data-service="3">
+                                <h3>サイバーセキュリティ</h3>
+                                <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
+                                <button class="view-more-btn">VIEW MORE</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -637,6 +677,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2024-1215-clecom-style"></script>
+    <script src="script.js?v=2024-1215-circular-carousel"></script>
 </body>
 </html>

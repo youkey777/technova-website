@@ -679,85 +679,302 @@ section:nth-child(even) {
   pointer-events: none;
 }
 
-/* Services Carousel */
-.services-carousel {
+/* Circular Carousel */
+.circular-carousel {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.service-slides {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-
-.service-slide {
-  min-width: 100%;
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
-
-.service-slide.active {
-  opacity: 1;
-}
-
-.carousel-navigation {
+  width: 600px;
+  height: 600px;
+  margin: 4rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
 }
 
-.carousel-btn {
-  background: var(--gradient-accent);
-  border: none;
-  width: 50px;
-  height: 50px;
+.orbit-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  color: white;
-  cursor: pointer;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.orbit-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: 
+    translate(-50%, -50%) 
+    rotate(var(--angle)) 
+    translateY(-280px) 
+    rotate(calc(-1 * var(--angle)));
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-wrapper {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+}
+
+.icon-wrapper:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper svg {
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
+  stroke-width: 2;
+}
+
+.service-center {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 10;
+}
+
+.service-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 -30px;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.nav-btn {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.2);
+}
+
+.nav-btn:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(236, 122, 155, 0.4);
+}
+
+.nav-btn svg {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+
+.service-display {
+  text-align: center;
+  padding: 2rem;
+  max-width: 320px;
+}
+
+.service-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.service-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(20px);
+  width: 300px;
+}
+
+.service-content.active {
+  opacity: 1;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: translateY(0);
+}
+
+.service-content h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.service-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.view-more-btn {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   box-shadow: 0 4px 15px rgba(236, 122, 155, 0.3);
 }
 
-.carousel-btn:hover {
+.view-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(236, 122, 155, 0.4);
+  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.4);
 }
 
-.carousel-btn svg {
-  width: 20px;
-  height: 20px;
+/* Circular Carousel Responsive */
+@media (max-width: 768px) {
+  .circular-carousel {
+    width: 400px;
+    height: 400px;
+    margin: 2rem auto;
+  }
+  
+  .orbit-icon {
+    width: 60px;
+    height: 60px;
+    transform: 
+      translate(-50%, -50%) 
+      rotate(var(--angle)) 
+      translateY(-180px) 
+      rotate(calc(-1 * var(--angle)));
+  }
+  
+  .icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .service-center {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .service-navigation {
+    padding: 0 -20px;
+  }
+  
+  .nav-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .nav-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .service-number {
+    font-size: 3rem;
+  }
+  
+  .service-content {
+    width: 240px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .service-content p {
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
-.carousel-dots {
-  display: flex;
-  gap: 1rem;
-}
-
-.carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(236, 122, 155, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.carousel-dot.active {
-  background: var(--gradient-accent);
-  transform: scale(1.2);
+@media (max-width: 480px) {
+  .circular-carousel {
+    width: 320px;
+    height: 320px;
+  }
+  
+  .orbit-icon {
+    width: 50px;
+    height: 50px;
+    transform: 
+      translate(-50%, -50%) 
+      rotate(var(--angle)) 
+      translateY(-140px) 
+      rotate(calc(-1 * var(--angle)));
+  }
+  
+  .icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .service-center {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .service-display {
+    padding: 1rem;
+  }
+  
+  .service-number {
+    font-size: 2.5rem;
+  }
+  
+  .service-content {
+    width: 180px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .service-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
+  
+  .view-more-btn {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
 }
 
 /* Case Studies Section */

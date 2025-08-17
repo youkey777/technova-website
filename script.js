@@ -11,10 +11,11 @@ const slideDots = document.querySelectorAll('.slide-dot');
 let currentSlide = 0;
 let slideInterval;
 
-// サービスカルーセル関連
-let currentServiceSlide = 0;
-const serviceSlides = document.querySelectorAll('.service-slide');
-const carouselDots = document.querySelectorAll('.carousel-dot');
+// 円形サービスカルーセル関連
+let currentServiceIndex = 0;
+let rotationAngle = 0;
+const serviceContents = document.querySelectorAll('.service-content');
+const serviceNumbers = ['01', '02', '03', '04'];
 
 // ケーススタディカルーセル関連
 let currentCaseSlide = 0;
@@ -377,67 +378,82 @@ function optimizedScroll() {
 window.removeEventListener('scroll', handleScroll);
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
-// サービスカルーセル機能
-function changeServiceSlide(direction) {
-    if (serviceSlides.length === 0) return;
+// 円形サービスカルーセル機能
+function rotateServices(direction) {
+    // 新しいサービスインデックスを計算
+    currentServiceIndex += direction;
     
-    // 現在のスライドを非アクティブに
-    serviceSlides[currentServiceSlide].classList.remove('active');
-    carouselDots[currentServiceSlide].classList.remove('active');
-    
-    // 新しいスライドインデックスを計算
-    currentServiceSlide += direction;
-    
-    if (currentServiceSlide >= serviceSlides.length) {
-        currentServiceSlide = 0;
-    } else if (currentServiceSlide < 0) {
-        currentServiceSlide = serviceSlides.length - 1;
+    if (currentServiceIndex >= serviceNumbers.length) {
+        currentServiceIndex = 0;
+    } else if (currentServiceIndex < 0) {
+        currentServiceIndex = serviceNumbers.length - 1;
     }
     
-    // 新しいスライドをアクティブに
-    serviceSlides[currentServiceSlide].classList.add('active');
-    carouselDots[currentServiceSlide].classList.add('active');
+    // 回転角度を更新（90度ずつ回転）
+    rotationAngle += direction * 90;
     
-    // スライドコンテナを移動
-    const slidesContainer = document.querySelector('.service-slides');
-    if (slidesContainer) {
-        slidesContainer.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+    // アイコンを回転
+    const orbitIcons = document.querySelector('.orbit-icons');
+    if (orbitIcons) {
+        orbitIcons.style.transform = `rotate(${rotationAngle}deg)`;
+    }
+    
+    // サービスコンテンツを切り替え
+    updateServiceContent();
+    
+    // サービス番号を更新
+    updateServiceNumber();
+}
+
+function updateServiceContent() {
+    // 全てのコンテンツを非アクティブに
+    serviceContents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // 現在のコンテンツをアクティブに
+    if (serviceContents[currentServiceIndex]) {
+        serviceContents[currentServiceIndex].classList.add('active');
     }
 }
 
-function goToServiceSlide(index) {
-    if (serviceSlides.length === 0 || index >= serviceSlides.length) return;
-    
-    // 現在のスライドを非アクティブに
-    serviceSlides[currentServiceSlide].classList.remove('active');
-    carouselDots[currentServiceSlide].classList.remove('active');
-    
-    // 指定されたスライドをアクティブに
-    currentServiceSlide = index;
-    serviceSlides[currentServiceSlide].classList.add('active');
-    carouselDots[currentServiceSlide].classList.add('active');
-    
-    // スライドコンテナを移動
-    const slidesContainer = document.querySelector('.service-slides');
-    if (slidesContainer) {
-        slidesContainer.style.transform = `translateX(-${currentServiceSlide * 100}%)`;
+function updateServiceNumber() {
+    const serviceNumberElement = document.querySelector('.service-number');
+    if (serviceNumberElement) {
+        // アニメーション付きで番号を更新
+        serviceNumberElement.style.transform = 'scale(0.8)';
+        serviceNumberElement.style.opacity = '0.5';
+        
+        setTimeout(() => {
+            serviceNumberElement.textContent = serviceNumbers[currentServiceIndex];
+            serviceNumberElement.style.transform = 'scale(1)';
+            serviceNumberElement.style.opacity = '1';
+        }, 150);
     }
 }
 
-// サービスカルーセルの自動再生
-function initServiceCarousel() {
-    // 自動スライド切り替え（5秒間隔）
+// 円形カルーセルの初期化
+function initCircularCarousel() {
+    // 初期状態を設定
+    updateServiceContent();
+    updateServiceNumber();
+    
+    // 自動回転（8秒間隔）
     setInterval(() => {
-        changeServiceSlide(1);
-    }, 5000);
+        rotateServices(1);
+    }, 8000);
     
-    // カルーセルホバー時の一時停止（オプション）
-    const carousel = document.querySelector('.services-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', () => {
-            // 自動再生を一時停止する処理はここに追加可能
+    // アイコンにホバーエフェクトを追加
+    const iconWrappers = document.querySelectorAll('.icon-wrapper');
+    iconWrappers.forEach(wrapper => {
+        wrapper.addEventListener('mouseenter', () => {
+            wrapper.style.transform = 'scale(1.2)';
         });
-    }
+        
+        wrapper.addEventListener('mouseleave', () => {
+            wrapper.style.transform = 'scale(1)';
+        });
+    });
 }
 
 // ケーススタディカルーセル機能
@@ -510,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     
     // カルーセル初期化を追加
-    initServiceCarousel();
+    initCircularCarousel();
     initCaseCarousel();
     
     window.addEventListener('load', function() {
