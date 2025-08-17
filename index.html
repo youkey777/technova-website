@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>TechNova - 次世代IT企業</title>
+    <script>
+        // 強制キャッシュクリア
+        const timestamp = Date.now();
+        if (performance.navigation.type === 1) {
+            // ページがリロードされた場合、強制的にキャッシュをクリア
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => caches.delete(name));
+                });
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
-    <link rel="stylesheet" href="styles.css?v=2024-1215-circular-carousel">
+    <link rel="stylesheet" href="styles.css?v=CLECOM-REDESIGN-20241217-142000&t=1734450000">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -156,7 +171,10 @@
                         </div>
                     </div>
 
-                    <!-- 中央のメインコンテンツ -->
+                    <!-- 中央イラストエリア -->
+                    <div class="service-illustration"></div>
+                    
+                    <!-- 下部テキストエリア -->
                     <div class="service-center">
                         <div class="service-navigation">
                             <button class="nav-btn prev-btn" onclick="rotateServices(-1)">
@@ -677,6 +695,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=2024-1215-circular-carousel"></script>
+    <script src="script.js?v=CLECOM-REDESIGN-20241217-142000&t=1734450000"></script>
 </body>
 </html>

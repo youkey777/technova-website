@@ -1,23 +1,30 @@
-/* CSS カスタムプロパティ（クリーンなカラーテーマ） */
+/* CSS カスタムプロパティ（プロフェッショナルIT企業カラーテーマ） - 強制適用 */
 :root {
-  /* Clecom準拠カラー */
-  --primary-color: #4A90A4;
-  --secondary-color: #6B7C93;
-  --accent-color: #EC7A9B;
-  --accent-light: #F4A6CD;
-  --background-color: #ffffff;
-  --surface-color: #f8fafc;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-light: #94a3b8;
-  --border-color: #e2e8f0;
-  --shadow-light: rgba(0, 0, 0, 0.05);
-  --shadow-medium: rgba(0, 0, 0, 0.1);
+  /* Stripe準拠プロフェッショナルカラー - 強制適用 */
+  --primary-color: #0A2540 !important;
+  --secondary-color: #425A72 !important;
+  --accent-color: #635BFF !important;
+  --accent-light: #8B85FF !important;
+  --background-color: #ffffff !important;
+  --surface-color: #F6F9FC !important;
+  --text-primary: #0A2540 !important;
+  --text-secondary: #425A72 !important;
+  --text-light: #8B949E !important;
+  --border-color: #D0D7DE !important;
+  --shadow-light: rgba(10, 37, 64, 0.04) !important;
+  --shadow-medium: rgba(10, 37, 64, 0.08) !important;
   
-  /* Clecomスタイルグラデーション */
-  --gradient-primary: linear-gradient(135deg, #4A90A4 0%, #6B7C93 100%);
-  --gradient-accent: linear-gradient(135deg, #EC7A9B 0%, #F4A6CD 100%);
-  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  /* プロフェッショナルグラデーション - 強制適用 */
+  --gradient-primary: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
+  --gradient-accent: linear-gradient(135deg, #635BFF 0%, #8B85FF 100%) !important;
+  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #F6F9FC 100%) !important;
+}
+
+/* 古いピンク色を強制的に上書き */
+* {
+  --accent-color: #635BFF !important;
+  --accent-light: #8B85FF !important;
+  --gradient-accent: linear-gradient(135deg, #635BFF 0%, #8B85FF 100%) !important;
 }
 
 /* ダークモード */
@@ -322,12 +329,13 @@ body {
 
 .hero-tech {
   display: inline-block !important;
-  background: var(--gradient-accent) !important;
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   font-weight: 900 !important;
   position: relative !important;
+  color: #0A2540 !important;
 }
 
 .hero-tech::after {
@@ -337,7 +345,7 @@ body {
   left: 0 !important;
   width: 100% !important;
   height: 4px !important;
-  background: var(--gradient-accent) !important;
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
   border-radius: 2px !important;
   opacity: 0.8 !important;
 }
@@ -494,9 +502,9 @@ body {
 }
 
 .btn-primary {
-  background: var(--gradient-accent) !important;
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
   color: white !important;
-  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.4) !important;
+  box-shadow: 0 8px 25px rgba(10, 37, 64, 0.4) !important;
   position: relative !important;
   overflow: hidden !important;
 }
@@ -518,8 +526,8 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(236, 122, 155, 0.5);
-  background: linear-gradient(135deg, #E66BA0 0%, #EC7A9B 100%);
+  box-shadow: 0 12px 35px rgba(10, 37, 64, 0.5);
+  background: linear-gradient(135deg, #425A72 0%, #0A2540 100%);
 }
 
 .btn-secondary {
@@ -679,36 +687,45 @@ section:nth-child(even) {
   pointer-events: none;
 }
 
-/* Circular Carousel */
+/* Clecom-style Circular Carousel - 完全再設計 */
 .circular-carousel {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
   margin: 4rem auto;
+  background: linear-gradient(135deg, #F6F9FC 0%, #E8F4FD 50%, #D0E7FA 100%);
+  border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 60px 40px 80px;
+  box-shadow: 0 20px 60px rgba(10, 37, 64, 0.1);
+  overflow: hidden;
 }
 
 .orbit-icons {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   border-radius: 50%;
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
 }
 
 .orbit-icon {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   top: 50%;
   left: 50%;
   transform-origin: 0 0;
   transform: 
     translate(-50%, -50%) 
     rotate(var(--angle)) 
-    translateY(-280px) 
+    translateY(-360px) 
     rotate(calc(-1 * var(--angle)));
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -716,14 +733,14 @@ section:nth-child(even) {
 .icon-wrapper {
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(10, 37, 64, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -739,75 +756,94 @@ section:nth-child(even) {
   stroke-width: 2;
 }
 
+/* 中央イラストエリア - Clecomスタイル */
+.service-illustration {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-top: 40px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 250"><rect width="300" height="250" fill="%23f0f8ff" opacity="0.3" rx="20"/><circle cx="150" cy="125" r="80" fill="%23e8f4fd"/><rect x="120" y="95" width="60" height="60" fill="%230A2540" opacity="0.8" rx="8"/><text x="150" y="125" text-anchor="middle" dy="0.3em" font-family="Arial" font-size="20" fill="white">Tech</text></svg>') center/contain no-repeat;
+}
+
+/* 下部テキストエリア - Clecomスタイル */
 .service-center {
   position: relative;
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: flex-start;
   z-index: 10;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .service-navigation {
   position: absolute;
   top: 50%;
-  width: 100%;
+  width: 120%;
+  left: -10%;
   display: flex;
   justify-content: space-between;
-  padding: 0 -30px;
+  padding: 0;
   transform: translateY(-50%);
   z-index: 20;
+  pointer-events: none;
 }
 
 .nav-btn {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid var(--accent-color);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%);
+  border: 3px solid #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.2);
+  box-shadow: 0 8px 30px rgba(10, 37, 64, 0.3);
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
+  pointer-events: all;
 }
 
 .nav-btn:hover {
-  background: var(--accent-color);
+  background: linear-gradient(135deg, #425A72 0%, #0A2540 100%);
   color: white;
   transform: scale(1.1);
-  box-shadow: 0 12px 35px rgba(236, 122, 155, 0.4);
+  box-shadow: 0 12px 40px rgba(10, 37, 64, 0.5);
 }
 
 .nav-btn svg {
-  width: 24px;
-  height: 24px;
-  color: inherit;
+  width: 28px;
+  height: 28px;
+  color: white;
+  stroke-width: 2.5;
 }
 
 .service-display {
   text-align: center;
-  padding: 2rem;
-  max-width: 320px;
+  padding: 0;
+  width: 100%;
+  max-width: 450px;
 }
 
 .service-number {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 900;
-  color: var(--primary-color);
+  color: #0A2540;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-family: 'Inter', sans-serif;
+  text-shadow: 0 2px 4px rgba(10, 37, 64, 0.1);
 }
 
 .service-content {
@@ -815,38 +851,40 @@ section:nth-child(even) {
   transform: translateY(20px);
   transition: all 0.5s ease;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) translateY(20px);
-  width: 300px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
 }
 
 .service-content.active {
   opacity: 1;
   position: relative;
-  top: auto;
-  left: auto;
   transform: translateY(0);
 }
 
 .service-content h3 {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+  color: #0A2540;
+  margin-bottom: 1.2rem;
   line-height: 1.3;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
 }
 
 .service-content p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #425A72;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .view-more-btn {
-  background: var(--gradient-accent);
-  color: white;
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
+  color: white !important;
   border: none;
   padding: 12px 24px;
   border-radius: 25px;
@@ -856,82 +894,24 @@ section:nth-child(even) {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(236, 122, 155, 0.3);
+  box-shadow: 0 4px 15px rgba(10, 37, 64, 0.3) !important;
 }
 
 .view-more-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(236, 122, 155, 0.4);
+  box-shadow: 0 8px 25px rgba(10, 37, 64, 0.4) !important;
+  background: linear-gradient(135deg, #425A72 0%, #0A2540 100%) !important;
 }
 
-/* Circular Carousel Responsive */
+/* Clecomスタイル タブレット対応 */
 @media (max-width: 768px) {
   .circular-carousel {
-    width: 90vw;
-    max-width: 380px;
-    height: 90vw;
-    max-height: 380px;
+    width: 95vw;
+    max-width: 600px;
+    height: 95vw;
+    max-height: 600px;
     margin: 2rem auto;
-  }
-  
-  .orbit-icon {
-    width: 60px;
-    height: 60px;
-    transform: 
-      translate(-50%, -50%) 
-      rotate(var(--angle)) 
-      translateY(-180px) 
-      rotate(calc(-1 * var(--angle)));
-  }
-  
-  .icon-wrapper svg {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .service-center {
-    width: 280px;
-    height: 280px;
-  }
-  
-  .service-navigation {
-    padding: 0 -20px;
-  }
-  
-  .nav-btn {
-    width: 55px;
-    height: 55px;
-  }
-  
-  .nav-btn svg {
-    width: 22px;
-    height: 22px;
-  }
-  
-  .service-number {
-    font-size: 3rem;
-  }
-  
-  .service-content {
-    width: 240px;
-  }
-  
-  .service-content h3 {
-    font-size: 1.2rem;
-  }
-  
-  .service-content p {
-    font-size: 0.85rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .circular-carousel {
-    width: 85vw;
-    max-width: 300px;
-    height: 85vw;
-    max-height: 300px;
+    padding: 40px 30px 60px;
   }
   
   .orbit-icon {
@@ -940,7 +920,7 @@ section:nth-child(even) {
     transform: 
       translate(-50%, -50%) 
       rotate(var(--angle)) 
-      translateY(-140px) 
+      translateY(-270px) 
       rotate(calc(-1 * var(--angle)));
   }
   
@@ -949,37 +929,144 @@ section:nth-child(even) {
     height: 20px;
   }
   
-  .service-center {
-    width: 220px;
-    height: 220px;
+  .service-illustration {
+    width: 250px;
+    height: 200px;
+    margin-top: 20px;
   }
   
-  .service-display {
-    padding: 1rem;
+  .service-navigation {
+    width: 110%;
+    left: -5%;
+  }
+  
+  .nav-btn {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .nav-btn svg {
+    width: 24px;
+    height: 24px;
   }
   
   .service-number {
-    font-size: 2.5rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
   }
   
-  .service-content {
-    width: 180px;
+  .service-display {
+    max-width: 400px;
   }
   
   .service-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .service-content p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 350px;
+  }
+}
+
+/* スマホ専用の完全再設計 */
+@media (max-width: 480px) {
+  .circular-carousel {
+    width: 95vw !important;
+    max-width: 400px !important;
+    height: 95vw !important;
+    max-height: 400px !important;
+    margin: 1rem auto !important;
+    padding: 30px 20px 50px !important;
+  }
+  
+  .orbit-icon {
+    width: 40px !important;
+    height: 40px !important;
+    transform: 
+      translate(-50%, -50%) 
+      rotate(var(--angle)) 
+      translateY(-180px) 
+      rotate(calc(-1 * var(--angle))) !important;
+  }
+  
+  .icon-wrapper {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+  }
+  
+  .icon-wrapper svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .service-illustration {
+    width: 200px !important;
+    height: 150px !important;
+    margin-top: 10px !important;
+  }
+  
+  .service-center {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+  
+  .service-navigation {
+    width: 120% !important;
+    left: -10% !important;
+    top: 40% !important;
+  }
+  
+  .nav-btn {
+    width: 50px !important;
+    height: 50px !important;
+    border: 2px solid #ffffff !important;
+  }
+  
+  .nav-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  .service-display {
+    max-width: 300px !important;
+    width: 100% !important;
+  }
+  
+  .service-number {
+    font-size: 3rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .service-content {
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+  
+  .service-content h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .service-content p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+    max-width: 260px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   .view-more-btn {
-    padding: 10px 20px;
-    font-size: 0.8rem;
+    padding: 10px 20px !important;
+    font-size: 0.8rem !important;
   }
 }
 
@@ -2030,7 +2117,7 @@ section:nth-child(even) {
 .submit-btn {
   width: 100%;
   padding: 1.5rem 2rem;
-  background: var(--gradient-accent);
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
   color: white;
   border: none;
   border-radius: 16px;
@@ -2045,7 +2132,7 @@ section:nth-child(even) {
   gap: 1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(236, 122, 155, 0.3);
+  box-shadow: 0 8px 30px rgba(10, 37, 64, 0.3) !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -2067,8 +2154,8 @@ section:nth-child(even) {
 
 .submit-btn:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(236, 122, 155, 0.5);
-  background: linear-gradient(135deg, #E66BA0 0%, #EC7A9B 100%);
+  box-shadow: 0 12px 40px rgba(10, 37, 64, 0.5) !important;
+  background: linear-gradient(135deg, #425A72 0%, #0A2540 100%) !important;
 }
 
 .btn-icon {
@@ -2184,18 +2271,19 @@ section:nth-child(even) {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 2rem;
-  background: var(--gradient-accent);
+  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
   color: white;
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(236, 122, 155, 0.3);
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.3) !important;
 }
 
 .footer-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(236, 122, 155, 0.4);
+  box-shadow: 0 6px 25px rgba(10, 37, 64, 0.4) !important;
+  background: linear-gradient(135deg, #425A72 0%, #0A2540 100%) !important;
 }
 
 .footer-btn svg {
