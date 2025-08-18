@@ -61,8 +61,21 @@ html {
 /* 強制的なスムーズスクロール対応 */
 body {
   scroll-behavior: smooth !important;
-  overscroll-behavior: none;
+  overscroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* スクロール問題の根本修正 */
+* {
+  touch-action: manipulation;
+}
+
+/* セクション間のスクロール改善 */
+section {
+  scroll-margin-top: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 /* フォント強制適用のためのCSS Reset */
@@ -1115,7 +1128,7 @@ section:nth-child(even) {
 
 .tech-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 2rem;
   align-items: stretch;
@@ -1133,7 +1146,7 @@ section:nth-child(even) {
 }
 
 .tech-card.main {
-  grid-row: span 2;
+  grid-column: span 2;
 }
 
 .tech-card:hover {
@@ -1234,7 +1247,7 @@ section:nth-child(even) {
   }
   
   .tech-card.main {
-    grid-row: span 1;
+    grid-column: span 1;
   }
   
   .tech-card {

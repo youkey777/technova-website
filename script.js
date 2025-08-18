@@ -411,6 +411,10 @@ function optimizedScroll() {
 window.removeEventListener('scroll', handleScroll);
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
+// モバイルスクロール問題の修正
+document.addEventListener('touchstart', function() {}, { passive: true });
+document.addEventListener('touchmove', function() {}, { passive: true });
+
 // 円形サービスカルーセル機能
 function rotateServices(direction, isManual = false) {
     // 手動操作の場合、タイマーをリセット
