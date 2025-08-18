@@ -1142,6 +1142,9 @@ section:nth-child(even) {
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
 }
 
 .tech-card.main {
@@ -1162,13 +1165,9 @@ section:nth-child(even) {
 
 .tech-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   transition: transform 0.4s ease;
-}
-
-.tech-card.main .tech-image {
-  height: 300px;
 }
 
 .tech-card:hover .tech-image {
@@ -1225,6 +1224,13 @@ section:nth-child(even) {
   50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+.tech-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .tech-content h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1235,29 +1241,38 @@ section:nth-child(even) {
 .tech-content p {
   color: var(--text-secondary);
   line-height: 1.6;
+  flex-grow: 1;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* タブレット対応 */
+@media (max-width: 1024px) and (min-width: 769px) {
   .tech-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   
-  .tech-card.main {
-    /* Mobile: all cards stack vertically */
+  .tech-card {
+    min-height: 400px;
+  }
+  
+  .tech-image {
+    height: 220px;
+  }
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .tech-card {
     padding: 1.5rem;
+    min-height: 350px;
   }
   
   .tech-image {
-    height: 150px;
-  }
-  
-  .tech-card.main .tech-image {
     height: 200px;
   }
 }
