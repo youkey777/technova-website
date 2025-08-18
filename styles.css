@@ -1,30 +1,37 @@
-/* CSS カスタムプロパティ（プロフェッショナルIT企業カラーテーマ） - 強制適用 */
+/* グラスモーフィズム透明感カラーテーマ */
 :root {
-  /* Stripe準拠プロフェッショナルカラー - 強制適用 */
-  --primary-color: #0A2540 !important;
-  --secondary-color: #425A72 !important;
-  --accent-color: #635BFF !important;
-  --accent-light: #8B85FF !important;
+  /* 透明感のある洗練されたカラーパレット */
+  --primary-color: #667eea !important;
+  --secondary-color: #64b3f4 !important;
+  --accent-color: #f093fb !important;
+  --accent-light: #a8edea !important;
   --background-color: #ffffff !important;
-  --surface-color: #F6F9FC !important;
-  --text-primary: #0A2540 !important;
-  --text-secondary: #425A72 !important;
-  --text-light: #8B949E !important;
-  --border-color: #D0D7DE !important;
-  --shadow-light: rgba(10, 37, 64, 0.04) !important;
-  --shadow-medium: rgba(10, 37, 64, 0.08) !important;
+  --surface-color: rgba(255, 255, 255, 0.25) !important;
+  --text-primary: #2d3748 !important;
+  --text-secondary: #4a5568 !important;
+  --text-light: #718096 !important;
+  --border-color: rgba(255, 255, 255, 0.3) !important;
+  --shadow-light: rgba(102, 126, 234, 0.1) !important;
+  --shadow-medium: rgba(102, 126, 234, 0.15) !important;
   
-  /* プロフェッショナルグラデーション - 強制適用 */
-  --gradient-primary: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
-  --gradient-accent: linear-gradient(135deg, #635BFF 0%, #8B85FF 100%) !important;
-  --gradient-subtle: linear-gradient(180deg, #ffffff 0%, #F6F9FC 100%) !important;
+  /* グラスモーフィズムグラデーション */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #64b3f4 100%) !important;
+  --gradient-accent: linear-gradient(135deg, #f093fb 0%, #a8edea 100%) !important;
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%) !important;
+  --gradient-bg: linear-gradient(135deg, #667eea 0%, #64b3f4 50%, #f093fb 100%) !important;
+  
+  /* グラスエフェクト */
+  --glass-bg: rgba(255, 255, 255, 0.25) !important;
+  --glass-border: rgba(255, 255, 255, 0.18) !important;
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  --glass-backdrop: blur(4px) !important;
 }
 
-/* 古いピンク色を強制的に上書き */
+/* グラスモーフィズムの全体適用 */
 * {
-  --accent-color: #635BFF !important;
-  --accent-light: #8B85FF !important;
-  --gradient-accent: linear-gradient(135deg, #635BFF 0%, #8B85FF 100%) !important;
+  --accent-color: #f093fb !important;
+  --accent-light: #a8edea !important;
+  --gradient-accent: linear-gradient(135deg, #f093fb 0%, #a8edea 100%) !important;
 }
 
 /* ダークモード */
@@ -47,7 +54,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px;
+}
+
+/* 強制的なスムーズスクロール対応 */
+body {
+  scroll-behavior: smooth !important;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* フォント強制適用のためのCSS Reset */
@@ -247,13 +262,13 @@ body {
   transition: 0.3s;
 }
 
-/* ヒーローセクション */
+/* グラスモーフィズム ヒーローセクション */
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
-  background: var(--surface-color);
+  background: var(--gradient-bg);
   overflow: hidden;
 }
 
@@ -313,11 +328,12 @@ body {
   font-family: 'Inter', 'Noto Sans JP', sans-serif !important;
   font-size: clamp(2.8rem, 8vw, 6rem) !important;
   font-weight: 800 !important;
-  line-height: 1.1 !important;
+  line-height: 1.3 !important;
   margin-bottom: 2.5rem !important;
-  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7) !important;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.1) !important;
   letter-spacing: -0.02em !important;
   text-transform: none !important;
+  color: #ffffff !important;
 }
 
 .hero-impact {
@@ -329,25 +345,27 @@ body {
 
 .hero-tech {
   display: inline-block !important;
-  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
+  background: linear-gradient(135deg, #f093fb 0%, #a8edea 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   font-weight: 900 !important;
   position: relative !important;
-  color: #0A2540 !important;
+  color: #f093fb !important;
+  margin-bottom: 1.2rem !important;
 }
 
 .hero-tech::after {
   content: '' !important;
   position: absolute !important;
-  bottom: -8px !important;
+  bottom: -15px !important;
   left: 0 !important;
   width: 100% !important;
   height: 4px !important;
-  background: linear-gradient(135deg, #0A2540 0%, #425A72 100%) !important;
+  background: linear-gradient(135deg, #f093fb 0%, #a8edea 100%) !important;
   border-radius: 2px !important;
-  opacity: 0.8 !important;
+  opacity: 0.9 !important;
+  box-shadow: 0 2px 8px rgba(240, 147, 251, 0.4) !important;
 }
 
 .hero-action {
@@ -1067,6 +1085,168 @@ section:nth-child(even) {
   .view-more-btn {
     padding: 10px 20px !important;
     font-size: 0.8rem !important;
+  }
+}
+
+/* Technology Innovation Section */
+.technology {
+  background: var(--gradient-glass);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.technology::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-bg);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.tech-showcase {
+  margin-top: 4rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.tech-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-card.main {
+  grid-row: span 2;
+}
+
+.tech-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--glass-shadow);
+}
+
+.tech-visual {
+  position: relative;
+  margin-bottom: 1.5rem;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tech-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tech-card.main .tech-image {
+  height: 300px;
+}
+
+.tech-card:hover .tech-image {
+  transform: scale(1.05);
+}
+
+.tech-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.floating-elements {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.element {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.element.ai {
+  background: var(--gradient-accent);
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.element.cloud {
+  background: var(--gradient-primary);
+  top: 60%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.element.data {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  bottom: 20%;
+  left: 50%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.tech-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.tech-content p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+  
+  .tech-card.main {
+    grid-row: span 1;
+  }
+  
+  .tech-card {
+    padding: 1.5rem;
+  }
+  
+  .tech-image {
+    height: 150px;
+  }
+  
+  .tech-card.main .tech-image {
+    height: 200px;
   }
 }
 

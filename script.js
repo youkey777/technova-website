@@ -16,6 +16,8 @@ let currentServiceIndex = 0;
 let rotationAngle = 0;
 const serviceContents = document.querySelectorAll('.service-content');
 const serviceNumbers = ['01', '02', '03', '04'];
+let carouselAutoInterval;
+let lastManualInteraction = 0;
 
 // ケーススタディカルーセル関連
 let currentCaseSlide = 0;
@@ -62,11 +64,42 @@ function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
         const offsetTop = element.offsetTop - 80;
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
+        
+        // 複数の方法でスムーズスクロールを実装
+        if ('scrollTo' in window) {
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        } else {
+            // フォールバック用のスムーズスクロール
+            animateScrollTo(offsetTop, 800);
+        }
     }
+}
+
+// カスタムスムーズスクロールアニメーション
+function animateScrollTo(targetY, duration) {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    const startTime = new Date().getTime();
+    
+    function easeInOutQuart(time, from, distance, duration) {
+        if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+        return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+    }
+    
+    function timer() {
+        const time = new Date().getTime() - startTime;
+        const newY = easeInOutQuart(time, startY, distance, duration);
+        if (time >= duration) {
+            window.scrollTo(0, targetY);
+        } else {
+            window.scrollTo(0, newY);
+            requestAnimationFrame(timer);
+        }
+    }
+    timer();
 }
 
 // スライドショー機能
@@ -379,7 +412,20 @@ window.removeEventListener('scroll', handleScroll);
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
 // 円形サービスカルーセル機能
-function rotateServices(direction) {
+function rotateServices(direction, isManual = false) {
+    // 手動操作の場合、タイマーをリセット
+    if (isManual) {
+        lastManualInteraction = Date.now();
+        clearInterval(carouselAutoInterval);
+        // 4秒後に自動回転を再開
+        carouselAutoInterval = setInterval(() => {
+            // 最後の手動操作から4秒経過した場合のみ自動回転
+            if (Date.now() - lastManualInteraction >= 4000) {
+                rotateServices(1, false);
+            }
+        }, 4000);
+    }
+    
     // 新しいサービスインデックスを計算
     currentServiceIndex += direction;
     
@@ -438,10 +484,13 @@ function initCircularCarousel() {
     updateServiceContent();
     updateServiceNumber();
     
-    // 自動回転（8秒間隔）
-    setInterval(() => {
-        rotateServices(1);
-    }, 8000);
+    // 初期自動回転（4秒間隔）
+    carouselAutoInterval = setInterval(() => {
+        // 手動操作がない場合のみ自動回転
+        if (Date.now() - lastManualInteraction >= 4000) {
+            rotateServices(1, false);
+        }
+    }, 4000);
     
     // アイコンにホバーエフェクトを追加
     const iconWrappers = document.querySelectorAll('.icon-wrapper');

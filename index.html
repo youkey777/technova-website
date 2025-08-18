@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
-    <link rel="stylesheet" href="styles.css?v=CLECOM-REDESIGN-20241217-142000&t=1734450000">
+    <link rel="stylesheet" href="styles.css?v=GLASSMORPHISM-REDESIGN-20241217-160000&t=1734460000">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -44,7 +44,7 @@
                 <li><a href="#home" class="nav-link">ホーム</a></li>
                 <li><a href="#services" class="nav-link">サービス</a></li>
                 <li><a href="#about" class="nav-link">会社概要</a></li>
-                <li><a href="#team" class="nav-link">チーム</a></li>
+                <li><a href="#technology" class="nav-link">技術</a></li>
                 <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
             </ul>
             <div class="nav-toggle">
@@ -177,12 +177,12 @@
                     <!-- 下部テキストエリア -->
                     <div class="service-center">
                         <div class="service-navigation">
-                            <button class="nav-btn prev-btn" onclick="rotateServices(-1)">
+                            <button class="nav-btn prev-btn" onclick="rotateServices(-1, true)">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
-                            <button class="nav-btn next-btn" onclick="rotateServices(1)">
+                            <button class="nav-btn next-btn" onclick="rotateServices(1, true)">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
@@ -402,89 +402,58 @@
             </div>
         </section>
 
-        <!-- チームセクション -->
-        <section id="team" class="team">
+        <!-- 技術イノベーションセクション -->
+        <section id="technology" class="technology">
             <div class="container">
-                <h2 class="section-title">Our Team</h2>
-                <p class="section-subtitle">情熱と専門性を兼ね備えたプロフェッショナル集団</p>
+                <h2 class="section-title">最先端技術</h2>
+                <p class="section-subtitle">未来を創造するテクノロジーとイノベーション</p>
                 
-                <div class="team-showcase">
-                    <!-- Leadership Section -->
-                    <div class="leadership-section">
-                        <div class="leader-card featured">
-                            <div class="leader-image">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="田中 太郎">
-                                <div class="leader-overlay">
-                                    <div class="leader-quote">
-                                        "テクノロジーで世界をより良い場所に"
+                <div class="tech-showcase">
+                    <div class="tech-grid">
+                        <div class="tech-card main">
+                            <div class="tech-visual">
+                                <div class="tech-animation">
+                                    <div class="floating-elements">
+                                        <div class="element ai"></div>
+                                        <div class="element cloud"></div>
+                                        <div class="element data"></div>
                                     </div>
                                 </div>
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI技術" class="tech-image">
                             </div>
-                            <div class="leader-info">
-                                <h3>田中 太郎</h3>
-                                <p class="leader-role">CEO / Founder</p>
-                                <p class="leader-bio">東京大学工学部卒業後、Google、Microsoftで15年の経験を積む。2020年TechNova設立。</p>
+                            <div class="tech-content">
+                                <h3>AI & 機械学習</h3>
+                                <p>最新のGPTモデルやディープラーニング技術を活用し、ビジネスの自動化と最適化を実現します。</p>
                             </div>
                         </div>
                         
-                        <div class="leader-card">
-                            <div class="leader-image">
-                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b300?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="佐藤 花子">
-                                <div class="leader-overlay">
-                                    <div class="leader-quote">
-                                        "AIで未来を切り拓く"
-                                    </div>
-                                </div>
+                        <div class="tech-card">
+                            <div class="tech-visual">
+                                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="クラウド技術" class="tech-image">
                             </div>
-                            <div class="leader-info">
-                                <h3>佐藤 花子</h3>
-                                <p class="leader-role">CTO</p>
-                                <p class="leader-bio">スタンフォード大学でAI博士号取得。シリコンバレーでの研究開発経験を活かす。</p>
+                            <div class="tech-content">
+                                <h3>クラウドアーキテクチャ</h3>
+                                <p>AWS、Azure、GCPを活用したスケーラブルなシステム設計</p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Team Gallery -->
-                    <div class="team-gallery">
-                        <div class="gallery-header">
-                            <h3>私たちのチーム</h3>
-                            <p>多様な背景を持つ専門家が、共通の目標に向かって協力しています</p>
                         </div>
                         
-                        <div class="photo-grid">
-                            <div class="photo-item large">
-                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="チームミーティング">
-                                <div class="photo-caption">
-                                    <span>イノベーションセッション</span>
-                                </div>
+                        <div class="tech-card">
+                            <div class="tech-visual">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="データサイエンス" class="tech-image">
                             </div>
-                            
-                            <div class="photo-item">
-                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="開発チーム">
-                                <div class="photo-caption">
-                                    <span>開発チーム</span>
-                                </div>
+                            <div class="tech-content">
+                                <h3>データサイエンス</h3>
+                                <p>ビッグデータ解析と予測モデルで意思決定を支援</p>
                             </div>
-                            
-                            <div class="photo-item">
-                                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="プレゼンテーション">
-                                <div class="photo-caption">
-                                    <span>クライアントプレゼン</span>
-                                </div>
+                        </div>
+                        
+                        <div class="tech-card">
+                            <div class="tech-visual">
+                                <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ブロックチェーン" class="tech-image">
                             </div>
-                            
-                            <div class="photo-item medium">
-                                <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="オフィス環境">
-                                <div class="photo-caption">
-                                    <span>クリエイティブな職場</span>
-                                </div>
-                            </div>
-                            
-                            <div class="photo-item">
-                                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="チームランチ">
-                                <div class="photo-caption">
-                                    <span>チームランチ</span>
-                                </div>
+                            <div class="tech-content">
+                                <h3>ブロックチェーン</h3>
+                                <p>セキュアで透明なデジタルトランザクションシステム</p>
                             </div>
                         </div>
                     </div>
@@ -653,7 +622,7 @@
                         <h4>企業情報</h4>
                         <ul>
                             <li><a href="#about">会社概要</a></li>
-                            <li><a href="#team">チーム</a></li>
+                            <li><a href="#technology">技術</a></li>
                             <li><a href="#contact">採用情報</a></li>
                             <li><a href="#contact">ニュース</a></li>
                         </ul>
@@ -695,6 +664,6 @@
         </div>
     </footer>
 
-    <script src="script.js?v=CLECOM-REDESIGN-20241217-142000&t=1734450000"></script>
+    <script src="script.js?v=GLASSMORPHISM-REDESIGN-20241217-160000&t=1734460000"></script>
 </body>
 </html>
