@@ -3,48 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>TechNova - 次世代IT企業</title>
-    <script>
-        // 強制キャッシュクリア
-        const timestamp = Date.now();
-        if (performance.navigation.type === 1) {
-            // ページがリロードされた場合、強制的にキャッシュをクリア
-            if ('caches' in window) {
-                caches.keys().then(names => {
-                    names.forEach(name => caches.delete(name));
-                });
-            }
-        }
-    </script>
+    <title>TheK - プライベートツアーで心に残る旅を</title>
+    <meta name="description" content="TheKは、あなただけの特別な旅をデザインするプライベートツアー専門サービスです。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800&display=block" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=block" as="style">
-    <link rel="stylesheet" href="styles.css?v=GLASSMORPHISM-REDESIGN-20241217-160000&t=1734460000">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- ヘッダー -->
     <header class="header">
         <nav class="nav">
             <div class="nav-brand">
-                <div class="logo">
-                    <div class="logo-icon">
-                        <div class="logo-cube"></div>
-                        <div class="logo-cube"></div>
-                        <div class="logo-cube"></div>
-                        <div class="logo-cube"></div>
-                    </div>
-                    <span class="logo-text">TechNova</span>
-                </div>
+                <a href="#home" class="logo">TheK</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">ホーム</a></li>
-                <li><a href="#services" class="nav-link">サービス</a></li>
-                <li><a href="#about" class="nav-link">会社概要</a></li>
-                <li><a href="#technology" class="nav-link">技術</a></li>
+                <li><a href="#about" class="nav-link">TheKについて</a></li>
+                <li><a href="#features" class="nav-link">特徴</a></li>
+                <li><a href="#tours" class="nav-link">ツアー</a></li>
+                <li><a href="#testimonials" class="nav-link">お客様の声</a></li>
                 <li><a href="#contact" class="nav-link">お問い合わせ</a></li>
             </ul>
             <div class="nav-toggle">
@@ -52,9 +30,6 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <button class="theme-toggle" id="themeToggle">
-                <span class="theme-icon">🌙</span>
-            </button>
         </nav>
     </header>
 
@@ -62,36 +37,30 @@
     <main>
         <!-- ヒーローセクション -->
         <section id="home" class="hero">
-            <div class="hero-background">
-                <div class="bg-geometric-pattern"></div>
-                <div class="bg-gradient-overlay"></div>
-            </div>
             <div class="hero-slideshow">
-                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
-                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80')"></div>
-                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
-                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+                <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
+                <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')"></div>
             </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h1 class="hero-title">
-                    <span class="hero-impact">どんな課題だって、</span><br>
-                    <span class="hero-tech">このテクノロジーで</span>
-                    <span class="hero-action">乗り越えていく。</span>
+                    <span class="hero-subtitle">Your Journey, Your Story</span>
+                    <span class="hero-main">心に残る、特別な旅を</span>
                 </h1>
                 <p class="hero-description">
-                    AIとクラウドテクノロジーの力で、不可能を可能に変える。<br>
-                    <span class="hero-emphasis">革新的なソリューションが、あなたのビジネスを次のステージへと導きます。</span>
+                    あなただけのプライベートツアーで、<br>
+                    忘れられない思い出を創りましょう
                 </p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">サービスを見る</button>
-                    <button class="btn btn-secondary">お問い合わせ</button>
+                    <a href="#tours" class="btn btn-primary">ツアーを見る</a>
+                    <a href="#contact" class="btn btn-secondary">お問い合わせ</a>
                 </div>
             </div>
-            <div class="slideshow-controls">
-                <span class="slide-dot active" data-slide="0"></span>
-                <span class="slide-dot" data-slide="1"></span>
-                <span class="slide-dot" data-slide="2"></span>
-                <span class="slide-dot" data-slide="3"></span>
+            <div class="slideshow-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
             <div class="scroll-indicator">
                 <span class="scroll-text">Scroll</span>
@@ -99,225 +68,351 @@
             </div>
         </section>
 
-        <!-- サービスセクション -->
-        <section id="services" class="services">
+        <!-- TheKについて -->
+        <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <div class="circular-carousel">
-                    <!-- 円形軌道上の装飾アイコン -->
-                    <div class="orbit-icons">
-                        <div class="orbit-icon" style="--angle: 0deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="section-header">
+                            <span class="section-label">About TheK</span>
+                            <h2 class="section-title">あなたらしい旅を、<br>一緒に創ります</h2>
                         </div>
-                        <div class="orbit-icon" style="--angle: 45deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                        <p class="about-description">
+                            TheKは、お客様一人ひとりの想いを大切にするプライベートツアー専門サービスです。
+                            定型のツアーではなく、あなたの興味、ペース、好みに合わせて、完全オーダーメイドの旅をご提案します。
+                        </p>
+                        <p class="about-description">
+                            経験豊富なガイドが、地元の人だけが知る隠れた名所から、定番の観光スポットまで、
+                            あなたの旅を特別なものにするお手伝いをいたします。
+                        </p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>完全オーダーメイド</h3>
+                                    <p>あなただけの特別な旅程を作成</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 90deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>経験豊富なガイド</h3>
+                                    <p>地元を知り尽くしたプロフェッショナル</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 135deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.7 6.3A1 1 0 0 0 13 5H5A2 2 0 0 0 3 7V19A2 2 0 0 0 5 21H17A2 2 0 0 0 19 19V11A1 1 0 0 0 18.7 10.3L14.7 6.3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M14 6V10H18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 180deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 22S8 18 8 13A4 4 0 0 1 16 13C16 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="12" cy="13" r="2" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 225deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2"/>
-                                    <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 270deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="orbit-icon" style="--angle: 315deg;">
-                            <div class="icon-wrapper">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 19C-2 12 4 2 9 2C13 2 13 6 11 8C16 10 21 6 19 15C17 13 17 10 16 10L9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                            <div class="about-feature">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="feature-text">
+                                    <h3>少人数制</h3>
+                                    <p>プライベートな時間を大切に</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TheK ツアーガイド">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- 中央イラストエリア -->
-                    <div class="service-illustration"></div>
-                    
-                    <!-- 下部テキストエリア -->
-                    <div class="service-center">
-                        <div class="service-navigation">
-                            <button class="nav-btn prev-btn" onclick="rotateServices(-1, true)">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
-                            <button class="nav-btn next-btn" onclick="rotateServices(1, true)">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
+        <!-- 特徴セクション -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Features</span>
+                    <h2 class="section-title">TheKが選ばれる理由</h2>
+                    <p class="section-subtitle">お客様に寄り添った、心に残るツアー体験をご提供します</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="オーダーメイドツアー">
+                            <div class="card-overlay"></div>
                         </div>
-
-                        <div class="service-display">
-                            <div class="service-number">01</div>
-                            <div class="service-content active" data-service="0">
-                                <h3>AI開発・機械学習</h3>
-                                <p>機械学習とディープラーニングを活用し、データから価値を創造する最先端のAIソリューションを提供します。予測分析、自然言語処理、画像認識など、幅広い分野でお客様のビジネスを革新します。</p>
-                                <button class="view-more-btn">VIEW MORE</button>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 11L12 14L22 4M21 12V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-content" data-service="1">
-                                <h3>クラウドソリューション</h3>
-                                <p>AWS、Azure、GCPを活用したスケーラブルで安全なクラウドインフラを設計・構築します。コスト最適化、高可用性、セキュリティを重視し、お客様のビジネスの成長を技術面から支援します。</p>
-                                <button class="view-more-btn">VIEW MORE</button>
+                            <h3>完全カスタマイズ</h3>
+                            <p>お客様のご要望に合わせて、行き先、時間、内容を自由に設定できます。ご家族、カップル、お友達との旅を、思い通りにデザインしましょう。</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="プロフェッショナルガイド">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-content" data-service="2">
-                                <h3>モバイルアプリ開発</h3>
-                                <p>ユーザー体験を最重視したiOS・Androidアプリを開発します。React Native、Flutterによるクロスプラットフォーム開発から、Swift、Kotlinによるネイティブ開発まで幅広く対応します。</p>
-                                <button class="view-more-btn">VIEW MORE</button>
+                            <h3>地元を知るガイド</h3>
+                            <p>地元出身、または長年住んでいるガイドが、ガイドブックにはない特別な場所や文化をご紹介します。</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="安心サポート">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <div class="service-content" data-service="3">
-                                <h3>サイバーセキュリティ</h3>
-                                <p>多層防御によるセキュリティ設計で、お客様の重要な資産を守ります。ペネトレーションテスト、脆弱性診断、セキュリティ監査を通じて、継続的なセキュリティ向上を実現します。</p>
-                                <button class="view-more-btn">VIEW MORE</button>
+                            <h3>安心の充実サポート</h3>
+                            <p>旅の計画から当日まで、専任スタッフが丁寧にサポート。24時間の緊急連絡体制で安心してご旅行いただけます。</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="快適な旅">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
+                            <h3>柔軟なスケジュール</h3>
+                            <p>時間やペースはお客様次第。ゆっくり写真を撮りたい、もっと滞在したい。そんなご要望にも柔軟に対応します。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ケーススタディセクション -->
-        <section id="case-studies" class="case-studies">
+        <!-- ツアー例 -->
+        <section id="tours" class="tours">
             <div class="container">
-                <h2 class="section-title">Case Studies</h2>
-                <p class="section-subtitle">私たちが手がけた革新的なプロジェクトをご紹介します</p>
-                
-                <div class="case-studies-carousel">
-                    <div class="case-container">
-                        <div class="case-slides">
-                            <div class="case-slide active">
-                                <div class="case-card">
-                                    <div class="case-visual">
-                                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI予測システム">
-                                        <div class="case-overlay">
-                                            <span class="case-category">AI・機械学習</span>
-                                        </div>
-                                    </div>
-                                    <div class="case-content">
-                                        <h3>需要予測AIシステム</h3>
-                                        <p class="case-client">大手小売チェーン A社</p>
-                                        <p class="case-description">店舗の売上データと外部要因を分析し、商品需要を高精度で予測するAIシステムを開発。在庫最適化により年間20%のコスト削減を実現。</p>
-                                        <div class="case-results">
-                                            <div class="result-item">
-                                                <span class="result-value">20%</span>
-                                                <span class="result-label">コスト削減</span>
-                                            </div>
-                                            <div class="result-item">
-                                                <span class="result-value">95%</span>
-                                                <span class="result-label">予測精度</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div class="section-header center">
+                    <span class="section-label">Tour Examples</span>
+                    <h2 class="section-title">人気のツアープラン</h2>
+                    <p class="section-subtitle">これらはほんの一例です。お客様のご希望に合わせてアレンジいたします</p>
+                </div>
+                <div class="tours-grid">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="京都歴史探訪ツアー">
+                            <div class="tour-badge">人気</div>
+                        </div>
+                        <div class="tour-content">
+                            <div class="tour-category">文化・歴史</div>
+                            <h3>京都歴史探訪ツアー</h3>
+                            <p>古都京都の歴史と文化を、プライベートガイドと共に深く味わう特別な一日。隠れた名所と定番スポットを巡ります。</p>
+                            <div class="tour-details">
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>6-8時間</span>
+                                </div>
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>1-4名</span>
                                 </div>
                             </div>
-                            
-                            <div class="case-slide">
-                                <div class="case-card">
-                                    <div class="case-visual">
-                                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="クラウド移行">
-                                        <div class="case-overlay">
-                                            <span class="case-category">クラウド</span>
-                                        </div>
-                                    </div>
-                                    <div class="case-content">
-                                        <h3>大規模クラウド移行プロジェクト</h3>
-                                        <p class="case-client">金融機関 B社</p>
-                                        <p class="case-description">レガシーシステムを段階的にAWSクラウドへ移行。高可用性とセキュリティを確保しながら、運用コストを大幅に削減。</p>
-                                        <div class="case-results">
-                                            <div class="result-item">
-                                                <span class="result-value">40%</span>
-                                                <span class="result-label">運用コスト削減</span>
-                                            </div>
-                                            <div class="result-item">
-                                                <span class="result-value">99.9%</span>
-                                                <span class="result-label">可用性</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="case-slide">
-                                <div class="case-card">
-                                    <div class="case-visual">
-                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="モバイルアプリ">
-                                        <div class="case-overlay">
-                                            <span class="case-category">モバイル</span>
-                                        </div>
-                                    </div>
-                                    <div class="case-content">
-                                        <h3>次世代配送管理アプリ</h3>
-                                        <p class="case-client">物流企業 C社</p>
-                                        <p class="case-description">リアルタイム配送追跡とAI最適化ルーティングを搭載したモバイルアプリ。配送効率の大幅な向上を実現。</p>
-                                        <div class="case-results">
-                                            <div class="result-item">
-                                                <span class="result-value">30%</span>
-                                                <span class="result-label">配送時間短縮</span>
-                                            </div>
-                                            <div class="result-item">
-                                                <span class="result-value">50万+</span>
-                                                <span class="result-label">アクティブユーザー</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a href="#contact" class="tour-btn">詳細を見る</a>
                         </div>
                     </div>
-                    
-                    <div class="case-navigation">
-                        <button class="case-nav-btn prev-btn" onclick="changeCaseSlide(-1)">
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="東京グルメツアー">
+                            <div class="tour-badge">おすすめ</div>
+                        </div>
+                        <div class="tour-content">
+                            <div class="tour-category">グルメ</div>
+                            <h3>東京グルメツアー</h3>
+                            <p>築地市場から隠れた名店まで、東京の美食を堪能する贅沢なツアー。地元の人だけが知る絶品グルメをご案内します。</p>
+                            <div class="tour-details">
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>4-5時間</span>
+                                </div>
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>2-6名</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="tour-btn">詳細を見る</a>
+                        </div>
+                    </div>
+                    <div class="tour-card">
+                        <div class="tour-image">
+                            <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="富士山絶景ツアー">
+                        </div>
+                        <div class="tour-content">
+                            <div class="tour-category">自然</div>
+                            <h3>富士山絶景ツアー</h3>
+                            <p>日本の象徴、富士山の絶景スポットを巡る癒しの旅。四季折々の美しい景色と共に、心に残る写真を撮影しましょう。</p>
+                            <div class="tour-details">
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>8-10時間</span>
+                                </div>
+                                <div class="tour-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21M13 7C13 9.20914 11.2091 11 9 11C6.79086 11 5 9.20914 5 7C5 4.79086 6.79086 3 9 3C11.2091 3 13 4.79086 13 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>1-4名</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="tour-btn">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お客様の声 -->
+        <section id="testimonials" class="testimonials">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="section-title">お客様の声</h2>
+                    <p class="section-subtitle">TheKのツアーをご利用いただいたお客様からのメッセージ</p>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial-track">
+                        <div class="testimonial-card active">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="佐藤美咲様">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>佐藤 美咲 様</h4>
+                                    <p>東京都・30代</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                「京都ツアーを利用しました。ガイドさんの知識が豊富で、普通の観光では行けないような場所にも連れて行ってもらえました。プライベートツアーなので自分のペースで回れて、写真もたくさん撮れて最高でした！」
+                            </p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="田中健太様">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>田中 健太 様</h4>
+                                    <p>神奈川県・40代</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                「家族4人で富士山ツアーに参加しました。子供たちのペースに合わせてくださり、無理なく楽しめました。ガイドさんの気配りが素晴らしく、家族全員が大満足でした。また利用したいです！」
+                            </p>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="山田陽子様">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4>山田 陽子 様</h4>
+                                    <p>大阪府・50代</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+                            <p class="testimonial-text">
+                                「東京のグルメツアーは本当に美味しいお店ばかりで感動しました。地元の人しか知らないような隠れた名店に行けて、東京の新しい魅力を発見できました。食通の友人にもおすすめしたいです。」
+                            </p>
+                        </div>
+                    </div>
+                    <div class="testimonial-navigation">
+                        <button class="testimonial-btn prev-btn" onclick="changeTestimonial(-1)">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
-                        <div class="case-indicators">
-                            <span class="case-indicator active" onclick="goToCaseSlide(0)"></span>
-                            <span class="case-indicator" onclick="goToCaseSlide(1)"></span>
-                            <span class="case-indicator" onclick="goToCaseSlide(2)"></span>
+                        <div class="testimonial-dots">
+                            <span class="testimonial-dot active" data-index="0"></span>
+                            <span class="testimonial-dot" data-index="1"></span>
+                            <span class="testimonial-dot" data-index="2"></span>
                         </div>
-                        <button class="case-nav-btn next-btn" onclick="changeCaseSlide(1)">
+                        <button class="testimonial-btn next-btn" onclick="changeTestimonial(1)">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -327,267 +422,90 @@
             </div>
         </section>
 
-        <!-- 会社概要セクション -->
-        <section id="about" class="about">
-            <div class="about-bg-pattern">
-                <div class="pattern-layer pattern-1"></div>
-                <div class="pattern-layer pattern-2"></div>
-                <div class="pattern-overlay"></div>
-            </div>
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2 class="section-title">About TechNova</h2>
-                        
-                        <div class="mission-statement">
-                            <h3 class="mission-title">私たちの使命</h3>
-                            <p class="mission-text">
-                                テクノロジーの力で、社会の課題を解決し、より良い未来を創造すること。それがTechNovaの存在意義です。
-                            </p>
-                        </div>
-
-                        <div class="vision-section">
-                            <h3 class="vision-title">ビジョン</h3>
-                            <p class="about-description">
-                                2020年に設立されたTechNovaは、「Technology for Everyone」を理念に掲げ、すべての人がテクノロジーの恩恵を受けられる社会の実現を目指しています。
-                            </p>
-                            <p class="about-description">
-                                AI、クラウド、モバイル技術を通じて、企業のデジタル変革を支援するだけでなく、社会全体のイノベーションを促進し、持続可能な未来の構築に貢献します。
-                            </p>
-                        </div>
-
-                        <div class="values-section">
-                            <h3 class="values-title">私たちの価値観</h3>
-                            <div class="values-timeline">
-                                <div class="value-card">
-                                    <div class="value-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 2L13.09 8.26L17 5L14.74 9.74L22 12L14.74 14.26L17 19L13.09 15.74L12 22L10.91 15.74L7 19L9.26 14.26L2 12L9.26 9.74L7 5L10.91 8.26L12 2Z" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                    <div class="value-content">
-                                        <h4>Innovation</h4>
-                                        <p>常に最先端の技術を追求し、革新的なソリューションを創造します。私たちは現状に満足することなく、未来を見据えた技術開発を行います。</p>
-                                    </div>
-                                </div>
-                                <div class="value-card">
-                                    <div class="value-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H9V3H13.5L18.5 8H21ZM7 12V21C7 21.6 7.4 22 8 22H16C16.6 22 17 21.6 17 21V12L12 7L7 12Z" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                    <div class="value-content">
-                                        <h4>Collaboration</h4>
-                                        <p>お客様と共に課題に向き合い、持続的な成長を実現します。パートナーシップを重視し、共に成功を目指します。</p>
-                                    </div>
-                                </div>
-                                <div class="value-card">
-                                    <div class="value-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7.5 14 12.5 16 16.5 18C20.5 20 22 18.5 22 18.5C22 18.5 21 20 17 18Z" fill="currentColor"/>
-                                        </svg>
-                                    </div>
-                                    <div class="value-content">
-                                        <h4>Sustainability</h4>
-                                        <p>環境と社会に配慮した技術開発で、未来世代に責任を果たします。持続可能な社会の実現に向けて行動します。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-visual">
-                        <div class="about-image-container">
-                            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TechNovaオフィス風景" class="about-image">
-                            <div class="image-overlay">
-                                <div class="overlay-content">
-                                    <h4>革新的なワークスペース</h4>
-                                    <p>最新テクノロジーと快適な環境で、創造性を最大化</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 技術イノベーションセクション -->
-        <section id="technology" class="technology">
-            <div class="container">
-                <h2 class="section-title">最先端技術</h2>
-                <p class="section-subtitle">未来を創造するテクノロジーとイノベーション</p>
-                
-                <div class="tech-showcase">
-                    <div class="tech-grid">
-                        <div class="tech-card main">
-                            <div class="tech-visual">
-                                <div class="tech-animation">
-                                    <div class="floating-elements">
-                                        <div class="element ai"></div>
-                                        <div class="element cloud"></div>
-                                        <div class="element data"></div>
-                                    </div>
-                                </div>
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI技術" class="tech-image">
-                            </div>
-                            <div class="tech-content">
-                                <h3>AI & 機械学習</h3>
-                                <p>最新のAI技術でビジネスプロセスの自動化と最適化を実現。効率的なソリューションを提供します。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-card">
-                            <div class="tech-visual">
-                                <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="クラウド技術" class="tech-image">
-                            </div>
-                            <div class="tech-content">
-                                <h3>クラウドアーキテクチャ</h3>
-                                <p>AWS、Azure、GCPを活用したスケーラブルなクラウドアーキテクチャを設計・構築します。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-card">
-                            <div class="tech-visual">
-                                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="データサイエンス" class="tech-image">
-                            </div>
-                            <div class="tech-content">
-                                <h3>データサイエンス</h3>
-                                <p>ビッグデータ解析と機械学習による予測モデルで、データドリブンな意思決定を支援します。</p>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-card">
-                            <div class="tech-visual">
-                                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="ブロックチェーン" class="tech-image">
-                            </div>
-                            <div class="tech-content">
-                                <h3>ブロックチェーン</h3>
-                                <p>セキュアで透明性の高いブロックチェーン技術による、次世代デジタルトランザクションシステム。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- お問い合わせセクション -->
+        <!-- お問い合わせ -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Contact Us</h2>
                 <div class="contact-wrapper">
-                    <div class="contact-info-card">
-                        <div class="contact-header">
-                            <h3>プロジェクトを始めましょう</h3>
-                            <p>革新的なソリューションで、あなたのビジネスを次のステージへ。</p>
+                    <div class="contact-info">
+                        <div class="section-header">
+                            <span class="section-label">Contact</span>
+                            <h2 class="section-title">あなただけの旅を<br>始めましょう</h2>
                         </div>
-                        
+                        <p class="contact-description">
+                            ご質問、ご相談、お見積もりなど、お気軽にお問い合わせください。
+                            経験豊富なスタッフが、あなたの理想の旅をデザインするお手伝いをいたします。
+                        </p>
                         <div class="contact-methods">
                             <div class="contact-method">
                                 <div class="method-icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M3 5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5ZM5 7L12 13L19 7V5L12 11L5 5V7Z" fill="currentColor"/>
+                                        <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
                                 <div class="method-content">
                                     <h4>メール</h4>
-                                    <p>info@technova.com</p>
+                                    <p>info@thek-tours.com</p>
                                     <span class="response-time">24時間以内に返信</span>
                                 </div>
                             </div>
-                            
                             <div class="contact-method">
                                 <div class="method-icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.68 14.91 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.09 8.32 8.82 8.59L6.62 10.79Z" fill="currentColor"/>
+                                        <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9845 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27097 2.11999 4.17997C2.095 3.90344 2.12787 3.62474 2.21649 3.3616C2.30512 3.09846 2.44756 2.85666 2.63476 2.6516C2.82196 2.44653 3.0498 2.28268 3.30379 2.17052C3.55777 2.05837 3.83233 2.00026 4.10999 1.99997H7.10999C7.5953 1.9952 8.06579 2.16705 8.43376 2.48351C8.80173 2.79996 9.04207 3.23942 9.10999 3.71997C9.23662 4.68004 9.47144 5.6227 9.80999 6.52997C9.94454 6.8879 9.97366 7.27689 9.8939 7.65086C9.81415 8.02482 9.62886 8.36809 9.35999 8.63998L8.08999 9.90997C9.51355 12.4135 11.5864 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0554 17.47 14.19C18.3773 14.5285 19.3199 14.7634 20.28 14.89C20.7658 14.9585 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
                                 <div class="method-content">
                                     <h4>電話</h4>
-                                    <p>03-1234-5678</p>
-                                    <span class="response-time">平日 9:00-18:00</span>
+                                    <p>03-XXXX-XXXX</p>
+                                    <span class="response-time">平日 10:00-18:00</span>
                                 </div>
                             </div>
-                            
                             <div class="contact-method">
                                 <div class="method-icon">
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                                        <path d="M12 22C12 22 20 16 20 10C20 7.87827 19.1571 5.84344 17.6569 4.34315C16.1566 2.84285 14.1217 2 12 2C9.87827 2 7.84344 2.84285 6.34315 4.34315C4.84285 5.84344 4 7.87827 4 10C4 16 12 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
                                 </div>
                                 <div class="method-content">
                                     <h4>オフィス</h4>
-                                    <p>東京都渋谷区恵比寿1-1-1</p>
-                                    <span class="response-time">事前予約制</span>
+                                    <p>東京都渋谷区XXX-X-X</p>
+                                    <span class="response-time">予約制</span>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="social-connect">
-                            <h4>ソーシャルメディア</h4>
-                            <div class="social-links">
-                                <a href="#" class="social-btn">LinkedIn</a>
-                                <a href="#" class="social-btn">Twitter</a>
-                                <a href="#" class="social-btn">GitHub</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-form-card">
-                        <form class="modern-contact-form">
-                            <div class="form-header">
-                                <h3>プロジェクトについて教えてください</h3>
-                                <p>詳細をお聞かせいただければ、最適なソリューションをご提案します。</p>
+                    <div class="contact-form-wrapper">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">お名前</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
-                            
-                            <div class="form-row">
-                                <div class="floating-input">
-                                    <input type="text" id="firstName" name="firstName" required>
-                                    <label for="firstName">お名前</label>
-                                </div>
-                                <div class="floating-input">
-                                    <input type="email" id="email" name="email" required>
-                                    <label for="email">メールアドレス</label>
-                                </div>
+                            <div class="form-group">
+                                <label for="email">メールアドレス</label>
+                                <input type="email" id="email" name="email" required>
                             </div>
-                            
-                            <div class="floating-input">
-                                <input type="text" id="company" name="company">
-                                <label for="company">会社名（任意）</label>
+                            <div class="form-group">
+                                <label for="phone">電話番号（任意）</label>
+                                <input type="tel" id="phone" name="phone">
                             </div>
-                            
-                            <div class="service-selection">
-                                <label class="selection-label">興味のあるサービス</label>
-                                <div class="service-options">
-                                    <label class="service-option">
-                                        <input type="checkbox" name="services" value="ai">
-                                        <span class="checkmark"></span>
-                                        AI開発
-                                    </label>
-                                    <label class="service-option">
-                                        <input type="checkbox" name="services" value="cloud">
-                                        <span class="checkmark"></span>
-                                        クラウドソリューション
-                                    </label>
-                                    <label class="service-option">
-                                        <input type="checkbox" name="services" value="mobile">
-                                        <span class="checkmark"></span>
-                                        モバイルアプリ開発
-                                    </label>
-                                    <label class="service-option">
-                                        <input type="checkbox" name="services" value="security">
-                                        <span class="checkmark"></span>
-                                        セキュリティ
-                                    </label>
-                                </div>
+                            <div class="form-group">
+                                <label for="tour-type">ご希望のツアー</label>
+                                <select id="tour-type" name="tour-type">
+                                    <option value="">選択してください</option>
+                                    <option value="kyoto">京都歴史探訪ツアー</option>
+                                    <option value="tokyo">東京グルメツアー</option>
+                                    <option value="fuji">富士山絶景ツアー</option>
+                                    <option value="custom">オーダーメイド</option>
+                                </select>
                             </div>
-                            
-                            <div class="floating-input">
-                                <textarea id="projectDetails" name="projectDetails" rows="4" required></textarea>
-                                <label for="projectDetails">プロジェクトの詳細</label>
+                            <div class="form-group">
+                                <label for="message">メッセージ</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            
                             <button type="submit" class="submit-btn">
-                                <span class="btn-text">プロジェクトを開始</span>
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <span>お問い合わせを送信</span>
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </button>
@@ -601,77 +519,64 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-main">
+            <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">
-                        <div class="logo-icon">
-                            <div class="logo-cube"></div>
-                            <div class="logo-cube"></div>
-                            <div class="logo-cube"></div>
-                            <div class="logo-cube"></div>
-                        </div>
-                        <span class="logo-text">TechNova</span>
+                    <h3 class="footer-logo">TheK</h3>
+                    <p class="footer-tagline">あなただけの特別な旅を</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.971h-1.513c-1.491 0-1.956.93-1.956 1.887v2.264h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
                     </div>
-                    <p class="footer-tagline">革新的なテクノロジーで、未来を創造する</p>
                 </div>
-                
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>ソリューション</h4>
+                        <h4>サービス</h4>
                         <ul>
-                            <li><a href="#services">AI開発</a></li>
-                            <li><a href="#services">クラウド移行</a></li>
-                            <li><a href="#services">モバイルアプリ</a></li>
-                            <li><a href="#case-studies">実績</a></li>
+                            <li><a href="#tours">ツアー一覧</a></li>
+                            <li><a href="#features">サービスの特徴</a></li>
+                            <li><a href="#contact">オーダーメイド</a></li>
+                            <li><a href="#contact">法人向けサービス</a></li>
                         </ul>
                     </div>
-                    
                     <div class="footer-column">
-                        <h4>企業情報</h4>
+                        <h4>会社情報</h4>
                         <ul>
-                            <li><a href="#about">会社概要</a></li>
-                            <li><a href="#technology">技術</a></li>
+                            <li><a href="#about">TheKについて</a></li>
+                            <li><a href="#contact">アクセス</a></li>
                             <li><a href="#contact">採用情報</a></li>
-                            <li><a href="#contact">ニュース</a></li>
+                            <li><a href="#contact">プレス</a></li>
                         </ul>
                     </div>
-                    
                     <div class="footer-column">
                         <h4>サポート</h4>
                         <ul>
+                            <li><a href="#contact">よくある質問</a></li>
                             <li><a href="#contact">お問い合わせ</a></li>
-                            <li><a href="#contact">技術サポート</a></li>
-                            <li><a href="#contact">パートナー</a></li>
-                            <li><a href="#contact">プライバシー</a></li>
+                            <li><a href="#contact">プライバシーポリシー</a></li>
+                            <li><a href="#contact">利用規約</a></li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="footer-cta">
-                    <h4>プロジェクトを始めませんか？</h4>
-                    <p>革新的なソリューションで、あなたのビジネスを次のレベルへ</p>
-                    <a href="#contact" class="footer-btn">
-                        相談する
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2024 TechNova. All rights reserved.</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-icon">LinkedIn</a>
-                        <a href="#" class="social-icon">Twitter</a>
-                        <a href="#" class="social-icon">GitHub</a>
-                    </div>
-                </div>
+                <p>&copy; 2024 TheK. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js?v=GLASSMORPHISM-REDESIGN-20241217-160000&t=1734460000"></script>
+    <script src="script.js"></script>
 </body>
 </html>
