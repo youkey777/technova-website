@@ -2,27 +2,27 @@
    Variables & Reset
    =========================== */
 :root {
-    /* Colors - Feminine & Elegant */
-    --color-primary: #D4AF37;        /* Gold */
-    --color-primary-light: #E8D4A0;
-    --color-primary-dark: #B8941F;
+    /* Colors - Kyoto Inspired Japanese Modern */
+    --color-primary: #6B8E65;        /* Matcha Green 抹茶 */
+    --color-primary-light: #8FA888;
+    --color-primary-dark: #4A6741;
 
-    --color-secondary: #FFE5E5;      /* Soft Pink */
-    --color-secondary-light: #FFF5F5;
-    --color-secondary-dark: #FFD1D1;
+    --color-secondary: #E7472D;      /* Vermillion 朱色 */
+    --color-secondary-light: #EF6B56;
+    --color-secondary-dark: #C84C45;
 
-    --color-accent: #F5CBA7;         /* Peach */
-    --color-beige: #FAF3E0;          /* Beige */
-    --color-brown: #8B7355;          /* Brown */
+    --color-accent: #D4AF37;         /* Gold Leaf 金箔 */
+    --color-beige: #F5F3EF;          /* Washi Paper 和紙 */
+    --color-sumi: #2C2C2C;           /* Sumi Ink 墨 */
 
-    --color-text: #4A4A4A;           /* Soft Black */
-    --color-text-light: #7A7A7A;
+    --color-text: #2C2C2C;           /* Sumi Black */
+    --color-text-light: #5A5A5A;
     --color-white: #FFFFFF;
-    --color-bg: #FAFAFA;
+    --color-bg: #FAF8F5;
 
-    /* Fonts */
-    --font-heading: 'Playfair Display', 'Noto Serif JP', serif;
-    --font-body: 'Montserrat', 'Noto Sans JP', sans-serif;
+    /* Fonts - Japanese Modern */
+    --font-heading: 'Noto Serif JP', 'Playfair Display', serif;
+    --font-body: 'Noto Sans JP', 'Montserrat', sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -244,7 +244,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(250, 243, 224, 0.7), rgba(255, 229, 229, 0.6));
+    background: linear-gradient(135deg, rgba(107, 142, 101, 0.4), rgba(245, 243, 239, 0.7));
     z-index: 1;
 }
 
@@ -419,6 +419,19 @@ p {
     text-transform: uppercase;
     display: block;
     margin-bottom: var(--spacing-sm);
+    position: relative;
+    display: inline-block;
+}
+
+.section-label::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--color-accent), var(--color-secondary));
 }
 
 .section-title {
@@ -512,9 +525,10 @@ p {
     right: -20px;
     width: 100%;
     height: 100%;
-    border: 3px solid var(--color-primary);
+    border: 3px solid var(--color-accent);
     border-radius: var(--radius-lg);
     z-index: -1;
+    box-shadow: 0 0 0 1px var(--color-primary);
 }
 
 /* ===========================
@@ -568,7 +582,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.3));
+    background: linear-gradient(to bottom, rgba(107, 142, 101, 0.1), rgba(231, 71, 45, 0.2));
 }
 
 .card-content {
@@ -727,7 +741,8 @@ p {
    =========================== */
 .testimonials {
     padding: var(--spacing-xl) 0;
-    background: var(--color-secondary-light);
+    background: var(--color-beige);
+    position: relative;
 }
 
 .testimonials-slider {
@@ -1023,8 +1038,9 @@ p {
    Footer
    =========================== */
 .footer {
-    background: linear-gradient(135deg, var(--color-beige), var(--color-secondary-light));
+    background: linear-gradient(135deg, var(--color-beige), var(--color-primary-light));
     padding: var(--spacing-xl) 0 var(--spacing-md);
+    position: relative;
 }
 
 .footer-content {
