@@ -116,14 +116,11 @@
       .logo-img {
         height: 32px;
         width: auto;
-        border-radius: 0;
-        border: none;
-        background: transparent;
-        padding: 0;
         object-fit: contain;
         display: block;
-        filter: brightness(0) invert(1);
-        mix-blend-mode: lighten;
+        filter: invert(1);
+        mix-blend-mode: screen;
+        background: transparent;
       }
 
       .logo span {
@@ -325,8 +322,8 @@
         font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
         font-weight: 600;
         letter-spacing: 0.06em;
-        font-size: clamp(2.1rem, 4.4vw, 3.1rem);
-        line-height: 1.5;
+        font-size: clamp(1.9rem, 4vw, 2.7rem);
+        line-height: 1.6;
       }
 
       .hero-text h1 span {
@@ -554,8 +551,8 @@
       .concept-visual img {
         width: 100%;
         height: 100%;
-        max-height: 300px;
-        object-fit: cover;
+        max-height: 400px;
+        object-fit: contain;
         display: block;
       }
 
@@ -693,6 +690,16 @@
       }
 
       @media (max-width: 768px) {
+        .hero {
+          min-height: 110vh;
+        }
+
+        .collage {
+          min-height: 90vh;
+          transform: scale(0.75);
+          transform-origin: top center;
+        }
+
         .media {
           margin-top: 72px;
         }
@@ -724,8 +731,8 @@
         }
 
         .scrap-image {
-          width: 180px;
-          height: 135px;
+          width: 253px;
+          height: 190px;
           aspect-ratio: 4 / 3;
           margin-bottom: 0;
           flex-shrink: 0;
