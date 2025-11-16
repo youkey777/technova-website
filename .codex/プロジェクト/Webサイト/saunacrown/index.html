@@ -123,6 +123,7 @@
         object-fit: contain;
         display: block;
         filter: brightness(0) invert(1);
+        mix-blend-mode: lighten;
       }
 
       .logo span {
@@ -634,7 +635,7 @@
 
       .issue-card-image {
         width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 16 / 9; max-height: 120px;
         border-radius: calc(var(--radius) - 8px);
         overflow: hidden;
         background: #050505;
@@ -681,58 +682,6 @@
           display: flex;
         }
 
-        .collage {
-          position: relative;
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 18px;
-          padding: 24px 20px 0;
-          justify-items: center;
-          overflow: visible;
-          min-height: auto;
-        }
-
-        .collage-item {
-          position: relative !important;
-          width: 100%;
-          max-width: 480px;
-          height: auto;
-          margin: 0;
-          padding: 8px;
-          border-radius: var(--radius);
-          transform: none !important;
-        }
-
-        .collage-item img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-          border-radius: calc(var(--radius) - 10px);
-        }
-
-        .collage-item[data-style="wide"] {
-          width: min(520px, 100%);
-        }
-
-        .collage-item[data-style="portrait"] {
-          width: min(360px, 90%);
-        }
-
-        .collage-item[data-style="square"] {
-          width: min(320px, 85%);
-        }
-
-        .collage-item:nth-child(3n + 1) {
-          transform: translateX(-6%) rotate(-1.5deg) !important;
-        }
-
-        .collage-item:nth-child(3n + 2) {
-          transform: translateX(4%) rotate(1.5deg) !important;
-        }
-
-        .collage-item:nth-child(3n) {
-          transform: translateX(0%) rotate(-2deg) !important;
-        }
 
         .hero-text {
           margin-top: 40px;
@@ -749,7 +698,7 @@
         }
 
         .media-feature img {
-          max-height: 360px;
+          max-height: 270px;
           padding: 12px;
         }
 
@@ -771,12 +720,12 @@
           flex-direction: row;
           align-items: center;
           gap: 12px;
-          min-height: 100px;
+          min-height: 200px;
         }
 
         .scrap-image {
-          width: 120px;
-          height: 90px;
+          width: 180px;
+          height: 135px;
           aspect-ratio: 4 / 3;
           margin-bottom: 0;
           flex-shrink: 0;
@@ -1044,7 +993,7 @@
         <div class="issues-grid">
           <article class="issue-card">
             <div class="issue-card-image">
-              <img src="画像/コンセプト/没入シルエット.png" alt="整うって結局なに？" />
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80" alt="整うって結局なに？" />
             </div>
             <small class="tag">ISSUE 01</small>
             <h4>整うって結局なに？自律神経へのアプローチ</h4>
@@ -1053,7 +1002,7 @@
           </article>
           <article class="issue-card">
             <div class="issue-card-image">
-              <img src="画像/カルーセル/WqrcIfv1RJ_qW-HeDFryR_f36cc1d2ce844972adc92aa61f55e092.png" alt="テントサウナで頭部を守る" />
+              <img src="https://images.unsplash.com/photo-1529236183275-c637ef1434ae?auto=format&fit=crop&w=400&q=80" alt="テントサウナで頭部を守る" />
             </div>
             <small class="tag">ISSUE 02</small>
             <h4>テントサウナで頭部を守る理由</h4>
@@ -1062,7 +1011,7 @@
           </article>
           <article class="issue-card">
             <div class="issue-card-image">
-              <img src="画像/コンセプト/サウナ専用カラー.png" alt="サウナハットの選び方" />
+              <img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=400&q=80" alt="サウナハットの選び方" />
             </div>
             <small class="tag">JOURNAL</small>
             <h4>サウナハットの選び方 3つのポイント</h4>

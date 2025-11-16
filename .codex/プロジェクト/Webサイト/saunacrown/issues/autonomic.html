@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sauna Crown | 自律神経へのアプローチ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #060607;
+        --ink: #f5f5f1;
+        --muted: #bfbfb8;
+        --card: #121217;
+        --line: rgba(255, 255, 255, 0.08);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont,
+          "Helvetica Neue", "Segoe UI", "Yu Gothic", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.8;
+        letter-spacing: 0.01em;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(6, 6, 7, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        z-index: 20;
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      nav a:hover {
+        color: var(--ink);
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .logo-img {
+        height: 32px;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo span {
+        letter-spacing: 0.4em;
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+
+      .article-main {
+        max-width: 840px;
+        margin: 80px auto 60px;
+        padding: 0 24px;
+      }
+
+      .article-meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .article-main h1 {
+        font-family: "Noto Serif JP", "Yu Mincho", serif;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-bottom: 18px;
+      }
+
+      .article-main p,
+      .article-main li {
+        font-size: 0.95rem;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+
+      .article-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin: 28px 0 22px;
+      }
+
+      .article-images figure {
+        margin: 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #050505;
+      }
+
+     .article-images img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+     }
+
+      .article-nav {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 40px 24px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-inner">
+        <a class="logo" href="../index.html#top">
+          <img src="../ロゴ/s-nega.jpg" alt="Sauna Crown ロゴ" class="logo-img" />
+          <span>SAUNA CROWN</span>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="../index.html#store">Store</a></li>
+            <li><a href="../index.html#concept">Concept</a></li>
+            <li><a href="../index.html#media">Media</a></li>
+            <li><a href="../issues/index.html">Issues</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="article-main">
+      <div class="article-meta">ISSUE 01 &nbsp;|&nbsp; 2025.03.15</div>
+      <h1>整うって結局なに？自律神経へのアプローチ</h1>
+      <div class="article-images">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" alt="サウナ室のイメージ写真" loading="lazy" style="max-height: 240px; object-fit: cover;" />
+        </figure>
+      </div>
+      <p>
+        フィンランド東部大学のLaukkanenらが2018年に示したデータでは、定期的なサウナ浴が自律神経系のバランス改善と循環器系のリスク低減に寄与する可能性が報告されています。サウナ → 冷却 → 休息という温冷交代のリズムは、交感神経と副交感神経の切り替えを促し、心拍変動(HRV)の向上に繋がるとされています。
+      </p>
+      <p>
+        Sauna Crown の深くかぶれるシルエットは視覚刺激を減らし、呼吸や鼓動といった内側のリズムに意識を向けやすくしてくれます。自律神経を整える鍵は「過度な入力を減らし、身体からのフィードバックを感じる時間を確保すること」。視界を穏やかにし、頭部からの熱ストレスを抑えることで、外気浴へ向かうまでのマインドセットが整います。
+      </p>
+      <ul>
+        <li>視覚ノイズを減らす → α波が優位になりやすい</li>
+        <li>深い呼吸に集中 → 迷走神経のトーン向上が期待できる</li>
+        <li>頭部の熱ストレスを軽減 → めまいやのぼせを抑え、休息の質を担保</li>
+      </ul>
+      <p>
+        深く被れるハットを着用することで、外気浴へ向かう前の「整う準備」の段階を整える。これが上級サウナーの新しい作法になりつつあります。
+      </p>
+      <div class="article-nav">
+        <a class="btn" href="index.html">Issues一覧に戻る</a>
+        <a class="btn" href="../index.html#top">トップに戻る</a>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../index.html#store">Store</a>
+        <a href="../index.html#concept">About</a>
+        <a href="../issues/index.html">Issues</a>
+        <a href="../index.html#lineup">Lineup</a>
+      </div>
+      <small>© Sauna Crown 2025</small>
+    </footer>
+  </body>
+</html>

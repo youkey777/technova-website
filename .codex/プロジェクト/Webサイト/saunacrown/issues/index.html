@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sauna Crown | Issues & Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #060607;
+        --ink: #f5f5f1;
+        --muted: #bfbfb8;
+        --accent: #f6d64a;
+        --accent-alt: #ff6e48;
+        --card: #121217;
+        --line: rgba(255, 255, 255, 0.08);
+        --radius: 28px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont,
+          "Helvetica Neue", "Segoe UI", "Yu Gothic", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(6, 6, 7, 0.9);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .logo-img {
+        height: 32px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .logo span {
+        letter-spacing: 0.4em;
+        font-size: 0.85rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .logo span {
+        letter-spacing: 0.4em;
+        font-size: 0.85rem;
+      }
+
+      .logo-img {
+        height: 32px;
+        object-fit: contain;
+        display: block;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      nav a:hover {
+        color: var(--ink);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 24px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 24px;
+      }
+
+      .section-eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.35em;
+        color: var(--muted);
+        font-size: 0.78rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .section-title {
+        font-size: clamp(1.9rem, 3vw, 2.6rem);
+        font-family: "Noto Serif JP", "Yu Mincho", serif;
+        margin-bottom: 32px;
+      }
+
+      .issues-grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .issue-card {
+        padding: 24px;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .issue-thumb {
+        margin: 0;
+        border-radius: calc(var(--radius) - 12px);
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #050505;
+        height: 140px;
+      }
+
+      .issue-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .issue-card h4 {
+        margin: 0;
+        font-size: 1.05rem;
+      }
+
+      .issue-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .tag {
+        font-size: 0.72rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 40px 24px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+      }
+
+      .issues-nav {
+        margin-top: 48px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="nav-inner">
+        <a class="logo" href="../index.html#top">
+          <img src="../繝ｭ繧ｴ/s-nega.jpg" alt="Sauna Crown 繝ｭ繧ｴ" class="logo-img" />
+          <span>SAUNA CROWN</span>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="../index.html#store">Store</a></li>
+            <li><a href="../index.html#concept">Concept</a></li>
+            <li><a href="../index.html#media">Media</a></li>
+            <li><a href="../issues/index.html">Issues</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="issues-list">
+        <span class="section-eyebrow">Issues / Journal</span>
+        <h1 class="section-title">謨ｴ縺・Γ繧ｫ繝九ぜ繝繧呈侍繧・窶・Articles</h1>
+        <div class="issues-grid">
+          <article class="issue-card">
+            <small class="tag">ISSUE 01</small>
+            <figure class="issue-thumb">
+              <img src="https://images.unsplash.com/photo-1524499982521-1ffd58dd89ea?auto=format&fit=crop&w=800&q=80" alt="熱気が立ち上るサウナ室" loading="lazy" />
+            </figure>
+            <h4>謨ｴ縺・▲縺ｦ邨仙ｱ縺ｪ縺ｫ・溯・蠕狗･樒ｵ後∈縺ｮ繧｢繝励Ο繝ｼ繝・/h4>
+            <p>莠､諢溽･樒ｵ後→蜑ｯ莠､諢溽･樒ｵ後・豕｢繧偵←縺・し繝昴・繝医☆繧九°縲４auna Crown縺ｮ豺ｱ陲ｫ繧願ｨｭ險医ｒ隗｣蜑悶・/p>
+            <a class="btn" href="autonomic.html">Read More</a>
+          </article>
+          <article class="issue-card">
+            <small class="tag">ISSUE 02</small>
+            <figure class="issue-thumb">
+              <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="テントサウナの夜景" loading="lazy" />
+            </figure>
+            <h4>繝・Φ繝医し繧ｦ繝翫〒鬆ｭ驛ｨ繧貞ｮ医ｋ逅・罰</h4>
+            <p>繝ｭ繧ｦ繝ｪ繝･辭ｱ縺ｮ逶ｴ謦・°繧蛾ｭ驛ｨ繧帝・′縺吶ぐ繧｢縺ｨ縺励※縲√し繧ｦ繝翫ワ繝・ヨ縺ｮ蠖ｹ蜑ｲ繧呈､懆ｨｼ縲・/p>
+            <a class="btn" href="tent.html">Read More</a>
+          </article>
+          <article class="issue-card">
+            <small class="tag">JOURNAL</small>
+            <figure class="issue-thumb">
+              <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=800&q=80" alt="サウナハットを手に取る手元" loading="lazy" />
+            </figure>
+            <h4>繧ｵ繧ｦ繝翫ワ繝・ヨ縺ｮ驕ｸ縺ｳ譁ｹ 3縺､縺ｮ繝昴う繝ｳ繝・/h4>
+            <p>繧ｷ繝ｫ繧ｨ繝・ヨ繝ｻ邏譚舌・繧ｫ繝ｩ繝ｼ縲る壹し繧ｦ繝翫・逶ｮ邱壹〒謚ｼ縺輔∴繧九∋縺肴欠讓吶ｒ繝斐ャ繧ｯ繧｢繝・・縲・/p>
+            <a class="btn" href="choice.html">Read More</a>
+          </article>
+        </div>
+        <div class="issues-nav">
+          <a class="btn" href="../index.html#top">繝医ャ繝励↓謌ｻ繧・/a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-links">
+        <a href="../index.html#store">Store</a>
+        <a href="../index.html#concept">About</a>
+        <a href="../issues/index.html">Issues</a>
+        <a href="../index.html#lineup">Lineup</a>
+      </div>
+      <small>ﾂｩ Sauna Crown 2025</small>
+    </footer>
+  </body>
+</html>
+
+
+
